@@ -1,0 +1,55 @@
+.crm-dash-activity {
+    min-height: 236px !important;
+}
+
+.enlarge-menu.enlarge-menu-all .topbar .topbar-left {
+    width: 70px !important;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label.asd::after, .custom-checkbox .custom-control-label.asd::before {
+    width: 25px;
+    height: 25px;
+}
+
+.custom-control-label.asd {
+    padding-top: 5px;
+    padding-left: 0.8rem;
+    font-size: 16px;
+}
+
+.altBaslik {
+    color: #c1c1c1;
+    font-size: 14px;
+    display: inline list-item;
+    list-style-type: disclosure-closed;
+}
+
+.game-edit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 46px;
+    width: 46px;
+    background: #1b52c7;
+    padding: 8px 11px;
+    opacity: 0;
+    transition: opacity ease-in-out .5s;
+    cursor: pointer;
+}
+
+.client-card:hover .game-edit {
+    opacity: 1;
+}
+
+.game {
+    position: relative;
+    height: 100%;
+    padding-bottom: 100px;
+}
+
+.card-bottom {
+    position: absolute;
+    bottom: 25px;
+    width: calc(100% - 2.5rem);
+    display: block;
+}
