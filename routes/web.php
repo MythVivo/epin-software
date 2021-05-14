@@ -8,6 +8,7 @@ use App\Http\Controllers\LangController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\OyunController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SayfaController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\SssController;
@@ -26,6 +27,8 @@ Route::get('/', [MainController::class, 'index'])->name('homepage');
  */
 Route::get('/giris', [LoginController::class, 'login'])->name('giris');
 Route::post('/giris', [LoginController::class, 'login_post'])->name('login_post');
+Route::get('/kayit', [RegisterController::class, 'register'])->name('kayit');
+Route::post('/kayit', [RegisterController::class, 'register_post'])->name('kayit_post');
 Route::get('/cikis', [LoginController::class, 'logout'])->name('logout');
 
 /*

@@ -2,6 +2,13 @@
 
 return [
     /*
+     * Hatalar Ve Mesajlar
+     */
+    'hata-1' => 'İşlem sırasında bir hata meydana geldi',
+
+    'mesaj-1' => 'E-postanızı Onaylayın',
+
+    /*
      * Anasayfa
      */
     'populerOyunlar' => 'Popüler Oyunlar',

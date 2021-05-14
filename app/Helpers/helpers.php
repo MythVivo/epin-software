@@ -465,4 +465,9 @@ function findFaqCategory($faq)
     return DB::table('faq_categories')->where('id', $faq)->first()->title;
 }
 
+function getSiteSenderMail()
+{
+    return env('MAIL_FROM_ADDRESS');
+}
+
 
