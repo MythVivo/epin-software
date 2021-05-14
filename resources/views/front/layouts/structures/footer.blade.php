@@ -1,6 +1,6 @@
 <footer class="footer">
     <div class="container">
-        <div class="footer-top">
+        <div class="footer-top pt-100">
             <div class="row">
                 <div class="footer-top-left col-sm-6">
                     <div class="col-sm-12 col-md-6">
@@ -11,7 +11,7 @@
                 <div class="footer-top-right col-sm-6">
 
                     <div class="row">
-                        <div class="col-sm-12 col-md mt-5">
+                        <div class="col-sm-12 col-md">
                             <h2 class="footer-title">
                                 <span>{{getSiteName()}}</span>
                             </h2>
@@ -24,7 +24,7 @@
                             </ul>
                         </div>
 
-                        <div class="col-sm-12 col-md mt-5">
+                        <div class="col-sm-12 col-md">
                             <h2 class="footer-title">
                                 <span>@lang('general.uyelik')</span>
                             </h2>
@@ -37,7 +37,7 @@
                             </ul>
                         </div>
 
-                        <div class="col-sm-12 col-md mt-5">
+                        <div class="col-sm-12 col-md">
                             <h2 class="footer-title">
                                 <span>@lang('general.iletisim')</span>
                             </h2>

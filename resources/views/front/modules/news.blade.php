@@ -13,7 +13,7 @@
     $image = $image[0] . "@2x." . $image[1];
     ?>
     @if($loop->first)
-        <div class="card h2x mb-3">
+        <div class="card h2x mb-100">
             <div class="row">
                 <div class="col-md-6">
                     <img src="{{asset(env('root').env('front').env('news').$image)}}" alt="{{$u->title}}">
@@ -22,13 +22,13 @@
                     <div class="card-body">
                         <h5 class="card-title">{{$u->title}}</h5>
                         <p class="card-text">{{$u->text_short}}</p>
-                        <button class="btn">@lang('general.devaminiOku') <span> >> </span></button>
+                        <div class="button-right-pos"><button class="btn">@lang('general.devaminiOku') <span> >> </span></button></div>
                     </div>
                 </div>
             </div>
         </div>
     @else
-        <div class="card h1x mb-3">
+        <div class="card h1x mb-30">
             <div class="row">
                 <div class="col-md-4">
                     <img src="{{asset(env('root').env('front').env('news').$image)}}" alt="{{$u->title}}">
@@ -37,7 +37,8 @@
                     <div class="card-body">
                         <h5 class="card-title">{{$u->title}}</h5>
                         <p class="card-text">{{$u->text_short}}</p>
-                        <button class="btn">@lang('general.devaminiOku') <span> >> </span></button>
+                        <div class="button-right-pos"><button class="btn">@lang('general.devaminiOku') <span> >> </span></button></div>
+
                     </div>
                 </div>
             </div>

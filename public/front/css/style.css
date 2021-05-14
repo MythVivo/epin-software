@@ -1,7 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 @font-face {
     font-family: 'BrandonGrotesque';
-    src: url('/BrandonGrotesque-Regular.otf') format('embedded-opentype');
+    src: url('../font/BrandonGrotesque-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'BrandonGrotesqueBold';
+    src: url('../font/BrandonGrotesque-Bold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'ProximaNova-Regular';
+    src: url('../font/ProximaNova-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'ProximaNova-SemiBold';
+    src: url('../font/Proxima-Nova-Sbold.otf') format('opentype');
 }
 /*
 Content
@@ -60,8 +72,35 @@ body {
                     games
 \* ======================================== */
 
+p{
+    font-family: 'BrandonGrotesque';
+}
 
-
+.pt-100{
+    padding-top: 100px;
+}
+.mt-100{
+    margin-top: 100px;
+}
+.mb-100{
+    margin-bottom: 100px;
+}
+.mb-30{
+    margin-bottom: 30px;
+}
+.button-right-pos{
+    float: right;
+}
+.heading-primary{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+}
+.heading-secondary{
+    font-family: 'ProximaNova-SemiBold';
+    font-weight: 600;
+    font-size: 24px;
+}
 .container-fluid {
     padding-right: 0px;
     padding-left: 0px;
@@ -209,7 +248,7 @@ body {
 }
 
 .title-area .button-area button i {
-    font-size: 36px;
+    font-size: 32px;
 }
 
 .title-area .button-area button:hover {
@@ -374,6 +413,7 @@ body {
     text-align: justify;
     text-indent: 10px;
     color: #24265B;
+    font-family: 'BrandonGrotesque';
 }
 
 .news .card.h1x .card-body .card-text {
@@ -384,6 +424,7 @@ body {
     text-align: justify;
     text-indent: 10px;
     color: #FCF7F1;
+    font-family: 'BrandonGrotesque';
 }
 
 .news .card .card-body button {
@@ -419,8 +460,8 @@ body {
 .comments .card {
     border: 3px solid #343891;
     border-radius: 20px;
+    padding: 36px 45px;
 }
-
 .comments .card .card-body {
     font-style: normal;
     font-weight: 400;
@@ -429,16 +470,24 @@ body {
     text-align: justify;
     text-indent: 10px;
     color: #343891;
+    padding: 0;
+    font-family: 'BrandonGrotesque';
 }
 
 .comments .card .card-footer {
     border-top: unset;
     font-style: normal;
-    font-weight: bold;
     font-size: 18px;
     line-height: 26px;
     text-indent: 10px;
     color: #343891;
+    padding: 0;
+}
+.comments .card .card-footer p {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    font-family: 'BrandonGrotesqueBold';
 }
 
 .comments .card .collapseble {
