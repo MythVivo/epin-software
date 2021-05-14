@@ -1,8 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@font-face {
+    font-family: 'BrandonGrotesque';
+    src: url('../BrandonGrotesque-Regular.eot?') format('embedded-opentype');
+}
+/*
+Content
+1-General
+2-Components
+3-index
+4-static-pages
+5-login-register
+6-games
+ */
+
+/* ======================================== *\
+                    GENERAL
+\* ======================================== */
 
 body {
     font-family: 'Montserrat', sans-serif;
 }
+
+/* ======================================== *\
+                    Components
+\* ======================================== */
+
+
+
+
+
+
+/* ======================================== *\
+                    index
+\* ======================================== */
+
+
+
+
+
+
+/* ======================================== *\
+                    static-pages
+\* ======================================== */
+
+
+
+
+
+
+/* ======================================== *\
+                    login-register
+\* ======================================== */
+
+
+
+
+
+/* ======================================== *\
+                    games
+\* ======================================== */
+
+
 
 .container-fluid {
     padding-right: 0px;
