@@ -12,89 +12,55 @@
 
 </head>
 <body>
-
-<form method="post">
-    @csrf
-    <input type="text" name="name_1">
-    <br>
-    <input type="text" name="name_2">
-    <br>
-    <input type="text" name="email">
-    <br>
-    <input type="password" name="password">
-    <br>
-    <input type="submit">
-</form>
-
-<footer class="footer">
+<section class="login-page">
     <div class="container">
-        <div class="footer-top">
+        <div class="form-wrapper">
             <div class="row">
-                <div class="footer-top-left col-sm-6">
-                    <div class="col-sm-12 col-md-6">
-                        <img src="{{asset(env('root').env('brand').'brandlogo.png')}}">
+
+                <div class="form-brand-logo">
+                    <div class="center-logo">
+                        <img src="{{asset(env('root').env('brand').'oyuneks-form-logo.svg')}}">
                     </div>
-
                 </div>
-                <div class="footer-top-right col-sm-6">
-
-                    <div class="row">
-                        <div class="col-sm-12 col-md mt-5">
-                            <h2 class="footer-title">
-                                <span>{{getSiteName()}}</span>
-                            </h2>
-                            <ul>
-                                <li><a href="">@lang('general.hakkimizda')</a></li>
-                                <li><a href="">@lang('general.haberler')</a></li>
-                                <li><a href="">@lang('general.kurumsal')</a></li>
-                                <li><a href="">@lang('general.yorumlar')</a></li>
-
-                            </ul>
-                        </div>
-
-                        <div class="col-sm-12 col-md mt-5">
-                            <h2 class="footer-title">
-                                <span>@lang('general.uyelik')</span>
-                            </h2>
-                            <ul>
-                                <li><a href="">@lang('general.odemelerim')</a></li>
-                                <li><a href="">@lang('general.gizlilikPolitikasi')</a></li>
-                                <li><a href="">@lang('general.kvk')</a></li>
-                                <li><a href="">@lang('general.uyelikSozlesmesi')</a></li>
-
-                            </ul>
-                        </div>
-
-                        <div class="col-sm-12 col-md mt-5">
-                            <h2 class="footer-title">
-                                <span>@lang('general.iletisim')</span>
-                            </h2>
-                            <ul>
-                                <li><a href="">@lang('general.destek')</a></li>
-                                <li><a href="">@lang('general.sifremiUnuttum')</a></li>
-
-                            </ul>
-                        </div>
+                <div class="form-container mt-100">
+                    <div class="login-register-buttons">
+                        <a class="thisPage">Oturum Aç</a>
+                        <a>Kayıt Ol</a>
                     </div>
+                    <form method="post" class="row">
+                        @csrf
+                        <div class="col-6">
+                            <label><input type="text" name="name_1" placeholder="Ad"></label>
 
+                        </div>
+                        <div class="col-6">
+
+                            <label><input type="text" name="name_2" placeholder="Soyad"></label>
+                        </div>
+
+                        <div class="col-12">
+                            <label><input type="text" name="email" placeholder="E-Posta"></label>
+                        </div>
+                        <div class="col-12">
+                            <label><input type="password" name="password" placeholder="Şifre"></label>
+                        </div>
+
+
+                        <div class="col-12"><button type="submit">Kayıt ol</button></div>
+                    </form>
+
+                    <div class="col-12 kvkk-text text-center">
+                        <p>Kişisel verileriniz, <span>Aydınlatma Metni</span> kapsamında işlenmektedir. “Üye ol” veya “Sosyal Hesap” butonlarından birine basarak  <span>Gizlilik Politikası </span> ile  <span>Üyelik ve Hizmet Alım Sözleşmesi</span>’ni okuduğunuzu ve kabul ettiğinizi onaylıyorsunuz.</p>
+                    </div>
                 </div>
-
             </div>
-        </div>
-        <div class="footer-center">
 
         </div>
-        <div class="footer-bottom">
 
-        </div>
 
     </div>
-</footer>
-</body>
-<script src="{{asset(env('root').env('front').env('js').'bootstrap.bundle.js')}}"></script>
-<script src="{{asset(env('root').env('front').env('js').'jquery.min.js')}}"></script>
 
 
-<script src="{{asset(env('root').env('front').env('js').'custom.js')}}"></script>
-</html>
+</section>
 
+@include('front.layouts.structures.footer')
