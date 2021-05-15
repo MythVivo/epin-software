@@ -7,7 +7,14 @@
                         <img class="brand-logo" src="{{asset(env('root').env('brand').'brandlogo.png')}}">
                     </div>
                     <p class="copyright-text">&copy; <?=date('Y')?> Tüm Hakları Saklıdır.</p>
-
+                    <ul class=social-links>
+                    <li><a><i class="fab fa-instagram"></i></a></li>
+                    <li><a><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a><i class="fab fa-twitter"></i></a></li>
+                    <li><a><i class="fab fa-youtube"></i></a></li>
+                    <li><a><i class="fab fa-tiktok"></i></a></li>
+                    <li><a><i class="fab fa-whatsapp"></i></a></li>
+                    </ul>
                 </div>
                 <div class="footer-top-right col-sm-6">
 
@@ -55,10 +62,19 @@
             </div>
         </div>
         <div class="footer-center">
-
+<div class="col-sm-12 col-md">
+<p class="text-center">ifeelcode</p>
+</div>
         </div>
         <div class="footer-bottom">
-
+           <div class="col-sm-12 col-md">
+           <div class="payment-method">
+           <span></span>
+           <span></span>
+           <span></span>
+           <span></span>
+           </div>
+           </div>
         </div>
 
     </div>

@@ -575,12 +575,12 @@ footer {
     padding-bottom: 5px;
 }
 
-.footer ul {
+.footer-top-right ul {
     all: unset;
     list-style: none;
 }
 
-.footer ul li {
+.footer-top-right ul li {
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -590,12 +590,12 @@ footer {
     padding: 6px 0px;
 }
 
-.footer ul li a {
+.footer-top-right ul li a {
     all: unset;
     cursor: pointer;
 }
 
-.footer ul li a:hover {
+.footer-top-right ul li a:hover {
     color: #80F1B1;
 }
 
@@ -609,6 +609,69 @@ footer {
     color: white;
     font-family: 'BrandonGrotesque';
     font-size: 16px;
+}
+
+.footer-top-left ul.social-links {
+    display: flex;
+    margin: 0;
+    margin-top: 40px;
+    padding: 0;
+}
+
+.footer-top-left ul.social-links li {
+    display: block;
+    margin-right: 10px;
+}
+
+.footer-top-left ul.social-links li:last-child {
+    margin-right: 0;
+}
+
+.footer-top-left ul.social-links li a {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #80F1B1;
+    display: block;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.footer-top-left ul.social-links li a i {
+    font-size: 16px;
+    color: #80F1B1;
+    display: inline-block;
+    line-height: 28px;
+}
+
+.footer-center {
+    padding-top: 75px;
+}
+
+.footer-center p {
+    font-size: 16px;
+    color: white;
+}
+
+.footer-bottom {
+    padding-top: 75px;
+    padding-bottom: 90px;
+}
+
+.footer-bottom .payment-method {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-bottom .payment-method span {
+    width: 65px;
+    height: 40px;
+    display: inline-block;
+    background-color: white;
+    margin-right: 30px;
+}
+
+.footer-bottom .payment-method span:last-child {
+    margin: 0;
 }
 
 section.login-page .form-wrapper {
