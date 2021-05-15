@@ -22,7 +22,7 @@
                     <div class="card-body">
                         <h5 class="card-title heading-secondary">{{$u->title}}</h5>
                         <p class="card-text">{{$u->text_short}}</p>
-                        <div class="button-right-pos"><button class="btn">@lang('general.devaminiOku') <span> >> </span></button></div>
+                        <div class="button-right-pos"><button class="btn-inline color-yellow">@lang('general.devaminiOku')</button></div>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                     <div class="card-body news-body">
                         <h5 class="card-title heading-secondary">{{$u->title}}</h5>
                         <p class="card-text">{{$u->text_short}}</p>
-                        <div class="button-right-pos"><button class="btn">@lang('general.devaminiOku') <span> >> </span></button></div>
+                        <div class="button-right-pos"><button class="btn-inline color-yellow">@lang('general.devaminiOku')</button></div>
 
                     </div>
                 </div>
@@ -48,6 +48,6 @@
 @endforeach
 <div class="row justify-content-md-center mt-5">
     <div class="col-3">
-        <button class="btn btn-first btn-block">@lang('general.tumunuGoruntule')</button>
+        <button class="btn-inline">@lang('general.tumunuGoruntule')</button>
     </div>
 </div>

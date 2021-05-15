@@ -34,6 +34,143 @@ body {
                     Components
 \* ======================================== */
 
+.btn-inline {
+    position: relative;
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    line-height: 19.5px;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 10px 50px;
+    font-size: 16px;
+    border-radius: 40px;
+    transition: all cubic-bezier(0.23, 1, 0.32, 1) .3s;
+}
+
+.btn-inline.left-arrow::before {
+    content: '\f323';
+    font-family: 'Font Awesome 5 Pro';
+    left: 18px;
+    position: absolute;
+}
+
+.btn-inline.right-arrow::before {
+    content: '\f101';
+    font-family: 'Font Awesome 5 Pro';
+    right: 18px;
+    position: absolute;
+}
+
+.btn-inline.icon {
+    padding: 10px 13px !important;
+}
+
+.btn-inline.icon::before,
+.btn-inline.icon::after {
+    position: unset !important;
+}
+
+.color-yellow {
+    background-color: #80F1B1;
+    color: #343891;
+}
+
+.color-yellow.border {
+    background-color: transparent;
+    color: #80F1B1;
+    border: 3px solid #80F1B1 !important;
+}
+
+.color-yellow.border:hover {
+    color: white;
+    background-color: #80F1B1;
+}
+
+.color-blue {
+    background-color: #343891;
+    color: #fff;
+}
+
+.color-blue.border {
+    background-color: transparent;
+    color: #343891;
+    border: 3px solid #343891 !important;
+}
+
+.color-blue.border:hover {
+    color: white;
+    background-color: #343891;
+}
+
+.btn-inline:hover {
+    box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+.btn-inline:active {
+    box-shadow: unset;
+    transform: unset;
+}
+
+.color-blue.border {
+    background-color: transparent;
+    color: #343891;
+    border: 3px solid #343891 !important;
+}
+
+.color-blue.transparent {
+    background-color: transparent;
+    border: unset;
+    color: #343891;
+}
+
+.color-yellow.transparent {
+    background-color: transparent;
+    border: unset;
+    color: #80F1B1;
+}
+
+.transparent:hover,
+.btn-disabled:hover {
+    box-shadow: unset;
+    transform: unset;
+}
+
+.color-yellow.btn-disabled {
+    background-color: #EAEFEC;
+    color: #A7B7AD;
+}
+
+.color-blue.btn-disabled {
+    background-color: #EDEDF0;
+    color: #B2B2BD;
+}
+
+.color-yellow.border.btn-disabled {
+    background-color: transparent;
+    color: #ECEEEF;
+    border-color: #ECEEEF !important;
+}
+
+.color-blue.transparent.btn-disabled {
+    background-color: transparent;
+    color: #EDEDF0;
+}
+
+.color-yellow.transparent.btn-disabled {
+    background-color: transparent;
+    color: #EAEFEC;
+}
+
 
 /* ======================================== *\
                     index
@@ -438,18 +575,6 @@ p {
     text-align: justify;
     text-indent: 10px;
     color: #FCF7F1;
-}
-
-.news .card .card-body button {
-    background: #80F1B1;
-    border-radius: 50px;
-    width: 255px;
-    height: 40px;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 17px;
-    color: #24265B;
 }
 
 .btn-first {
