@@ -34,7 +34,7 @@
                     <img src="{{asset(env('root').env('front').env('news').$image)}}" alt="{{$u->title}}">
                 </div>
                 <div class="col-md-8">
-                    <div class="card-body">
+                    <div class="card-body news-body">
                         <h5 class="card-title heading-secondary">{{$u->title}}</h5>
                         <p class="card-text">{{$u->text_short}}</p>
                         <div class="button-right-pos"><button class="btn">@lang('general.devaminiOku') <span> >> </span></button></div>

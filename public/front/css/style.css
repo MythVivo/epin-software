@@ -75,7 +75,8 @@ p {
 }
 
 .button-right-pos {
-    float: right;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .heading-primary {
@@ -86,7 +87,7 @@ p {
 }
 
 .heading-secondary {
-    font-family: 'BrandonGrotesqueBold';
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 24px;
     color: #80F1B1;
@@ -141,6 +142,10 @@ p {
     margin-bottom: 40px;
     border: 3px solid transparent;
     transition: all .2s ease-in-out !important;
+}
+
+.news-body {
+    padding: 20px 60px 20px 0;
 }
 
 @media (max-width: 500px) {
@@ -531,13 +536,14 @@ footer {
 
 .footer-title {
     font-style: normal;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 20px;
     line-height: 29px;
     text-indent: 10px;
     color: #FCF7F1;
     text-transform: uppercase;
     margin-bottom: 18px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .footer-title span {
