@@ -4,8 +4,9 @@
             <div class="row">
                 <div class="footer-top-left col-sm-6">
                     <div class="col-sm-12 col-md-6">
-                        <img src="{{asset(env('root').env('brand').'brandlogo.png')}}">
+                        <img class="brand-logo" src="{{asset(env('root').env('brand').'brandlogo.png')}}">
                     </div>
+                    <p class="copyright-text">&copy; <?=date('Y')?> Tüm Hakları Saklıdır.</p>
 
                 </div>
                 <div class="footer-top-right col-sm-6">

@@ -259,7 +259,7 @@ p {
 
 .site-header-area {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
     background-color: transparent;
     transition: all ease-in-out .6s;
@@ -307,6 +307,11 @@ p {
     font-weight: bold;
     font-size: 15px;
     line-height: 18px;
+}
+
+.site-header-area ul.nav-pills li a.active {
+    color: #80F1B1 !important;
+    background-color: transparent;
 }
 
 .site-header-area ul.nav-pills li a>span {
@@ -594,8 +599,16 @@ footer {
     color: #80F1B1;
 }
 
-.footer-top-left img {
-    width: 100%;
+.footer-top-left img.brand-logo {
+    width: 240px;
+    margin-bottom: 20px;
+}
+
+.footer-top-left p.copyright-text {
+    display: block;
+    color: white;
+    font-family: 'BrandonGrotesque';
+    font-size: 16px;
 }
 
 section.login-page .form-wrapper {
