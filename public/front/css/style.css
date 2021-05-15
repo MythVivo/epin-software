@@ -9,16 +9,6 @@
     src: url('../font/BrandonGrotesque-Bold.otf') format('opentype');
 }
 
-@font-face {
-    font-family: 'ProximaNova-Regular';
-    src: url('../font/ProximaNova-Regular.otf') format('opentype');
-}
-
-@font-face {
-    font-family: 'ProximaNova-SemiBold';
-    src: url('../font/Proxima-Nova-Sbold.otf') format('opentype');
-}
-
 
 /*
 Content
@@ -92,12 +82,14 @@ p {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 36px;
+    color: #343891;
 }
 
 .heading-secondary {
-    font-family: 'ProximaNova-SemiBold';
+    font-family: 'BrandonGrotesqueBold';
     font-weight: 600;
     font-size: 24px;
+    color: #80F1B1;
 }
 
 .container-fluid {
@@ -182,7 +174,6 @@ p {
     border-radius: 20px !important;
     transform: translateY(50%);
     padding: 10px 20px;
-    font-weight: 700;
 }
 
 .popular-game .card:hover {
@@ -203,12 +194,6 @@ p {
     border-bottom: #343891 3px solid;
     padding: 20px 0px;
     margin-bottom: 70px;
-}
-
-.title-area .title h1 {
-    font-weight: 800 !important;
-    color: #343891;
-    font-size: 36px !important;
 }
 
 .title-area .button-area {
@@ -293,7 +278,7 @@ p {
 }
 
 .site-header-area ul.nav-pills li {
-    padding: 0px 10px;
+    padding: 0px 20px;
 }
 
 .site-header-area ul.nav-pills li i {
@@ -372,11 +357,16 @@ p {
     display: flex;
     align-items: center;
     margin-top: 20px;
-    margin-left: 60px;
+    margin-left: 20px;
 }
 
 .site-header-area ul.icon-area li {
-    padding: 0px 20px;
+    padding: 0px 10px;
+}
+
+.site-header-area ul.icon-area li:last-child {
+    padding-left: 10px;
+    padding-right: 0;
 }
 
 .site-header-area ul.icon-area li:nth-child(1) a {
@@ -389,7 +379,6 @@ p {
 .site-header-area ul.icon-area li a {
     border-radius: 50%;
     background-color: rgba(128, 241, 177, 0.7);
-    ;
     width: 40px;
     height: 40px;
     color: #FCF7F1;
@@ -426,22 +415,6 @@ p {
     height: 100%;
 }
 
-.news .card.h2x .card-body .card-title {
-    color: #6C16FF;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 37px;
-}
-
-.news .card.h1x .card-body .card-title {
-    color: #80F1B1;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 37px;
-}
-
 .news .card.h2x .card-body .card-text {
     font-style: normal;
     font-weight: 400;
@@ -450,7 +423,6 @@ p {
     text-align: justify;
     text-indent: 10px;
     color: #24265B;
-    font-family: 'BrandonGrotesque';
 }
 
 .news .card.h1x .card-body .card-text {
@@ -461,7 +433,6 @@ p {
     text-align: justify;
     text-indent: 10px;
     color: #FCF7F1;
-    font-family: 'BrandonGrotesque';
 }
 
 .news .card .card-body button {
@@ -473,7 +444,6 @@ p {
     font-weight: 600;
     font-size: 14px;
     line-height: 17px;
-    /* identical to box height */
     color: #24265B;
 }
 

@@ -1,6 +1,6 @@
 <div class="row title-area" data-lang="{{getLang()}}">
     <div class="col-sm-12 col-md-9 title">
-        <h1>@lang('general.haberler')</h1>
+        <h1 class="heading-primary">@lang('general.haberler')</h1>
     </div>
     <div class="col-sm-12 col-md-3 button-area">
         <a href="#">@lang('general.tumunuGoruntule') >></a>
@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="card-body">
-                        <h5 class="card-title">{{$u->title}}</h5>
+                        <h5 class="card-title heading-secondary">{{$u->title}}</h5>
                         <p class="card-text">{{$u->text_short}}</p>
                         <div class="button-right-pos"><button class="btn">@lang('general.devaminiOku') <span> >> </span></button></div>
                     </div>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">{{$u->title}}</h5>
+                        <h5 class="card-title heading-secondary">{{$u->title}}</h5>
                         <p class="card-text">{{$u->text_short}}</p>
                         <div class="button-right-pos"><button class="btn">@lang('general.devaminiOku') <span> >> </span></button></div>
 

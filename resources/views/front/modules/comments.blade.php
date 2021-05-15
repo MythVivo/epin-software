@@ -1,6 +1,6 @@
 <div class="row title-area" data-lang="{{getLang()}}">
     <div class="col-sm-12 title text-center">
-        <h1>@lang('general.yorumlar')</h1>
+        <h1 class="heading-primary">@lang('general.yorumlar')</h1>
     </div>
 </div>
 
