@@ -49,8 +49,16 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                    <div class="form-theme-switch">
+                    <label>
+                    <input class="change-theme" type="checkbox" id="flexSwitchCheckDefault">
+                    <span>
+                    <img src="{{asset('/public/front/images/icons/type_sun.png')}}">
+                    <img src="{{asset('/public/front/images/icons/type_night.png')}}">
+                    </span>
+
+                    </label>
+
                     </div>
                 </li>
             </ul>

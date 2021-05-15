@@ -3,18 +3,23 @@
     font-family: 'BrandonGrotesque';
     src: url('../font/BrandonGrotesque-Regular.otf') format('opentype');
 }
+
 @font-face {
     font-family: 'BrandonGrotesqueBold';
     src: url('../font/BrandonGrotesque-Bold.otf') format('opentype');
 }
+
 @font-face {
     font-family: 'ProximaNova-Regular';
     src: url('../font/ProximaNova-Regular.otf') format('opentype');
 }
+
 @font-face {
     font-family: 'ProximaNova-SemiBold';
     src: url('../font/Proxima-Nova-Sbold.otf') format('opentype');
 }
+
+
 /*
 Content
 1-General
@@ -25,6 +30,7 @@ Content
 6-games
  */
 
+
 /* ======================================== *\
                     GENERAL
 \* ======================================== */
@@ -33,13 +39,10 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+
 /* ======================================== *\
                     Components
 \* ======================================== */
-
-
-
-
 
 
 /* ======================================== *\
@@ -47,17 +50,9 @@ body {
 \* ======================================== */
 
 
-
-
-
-
 /* ======================================== *\
                     static-pages
 \* ======================================== */
-
-
-
-
 
 
 /* ======================================== *\
@@ -65,42 +60,46 @@ body {
 \* ======================================== */
 
 
-
-
-
 /* ======================================== *\
                     games
 \* ======================================== */
 
-p{
+p {
     font-family: 'BrandonGrotesque';
 }
 
-.pt-100{
+.pt-100 {
     padding-top: 100px;
 }
-.mt-100{
+
+.mt-100 {
     margin-top: 100px;
 }
-.mb-100{
+
+.mb-100 {
     margin-bottom: 100px;
 }
-.mb-30{
+
+.mb-30 {
     margin-bottom: 30px;
 }
-.button-right-pos{
+
+.button-right-pos {
     float: right;
 }
-.heading-primary{
+
+.heading-primary {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 36px;
 }
-.heading-secondary{
+
+.heading-secondary {
     font-family: 'ProximaNova-SemiBold';
     font-weight: 600;
     font-size: 24px;
 }
+
 .container-fluid {
     padding-right: 0px;
     padding-left: 0px;
@@ -151,7 +150,6 @@ p{
     border: 3px solid transparent;
     transition: all .2s ease-in-out !important;
 }
-
 
 @media (max-width: 500px) {
     .popular-game .card {
@@ -217,7 +215,6 @@ p{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
 }
 
 .title-area .button-area a {
@@ -238,7 +235,8 @@ p{
     transition: all .3s ease-in-out !important;
 }
 
-.btn-check:focus + .btn, .btn:focus {
+.btn-check:focus+.btn,
+.btn:focus {
     outline: 0;
     box-shadow: unset !important;
 }
@@ -281,7 +279,6 @@ p{
     z-index: 9999;
     top: 0%;
     transition: top ease-in-out .3s;
-
 }
 
 .site-logo img {
@@ -312,7 +309,7 @@ p{
     line-height: 18px;
 }
 
-.site-header-area ul.nav-pills li a > span {
+.site-header-area ul.nav-pills li a>span {
     color: #80F1B1;
 }
 
@@ -320,16 +317,50 @@ p{
     transform: rotate(90deg);
 }
 
-.form-switch .form-check-input {
-    width: 40px;
-    height: 20px;
-    background-image: url("../images/icons/gunes.png"), url(../images/icons/mask.png) !important;
-    background-repeat: no-repeat, no-repeat;
-    background-size: 10px, 20px;
-    background-position: 5px, left;
-    background-color: transparent;
-    border: 1px solid #80F1B1;
+.form-theme-switch input {
+    display: none;
+}
 
+.form-theme-switch label {
+    width: 26px;
+    height: 40px;
+    border: 1px solid #80f1b1;
+    border-radius: 20px;
+    padding: 2px;
+}
+
+.form-theme-switch label span {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    transition: all ease-in-out .3s;
+    padding: 5px;
+    user-select: none;
+}
+
+.form-theme-switch label span img {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+}
+
+.form-theme-switch label span img:last-child {
+    opacity: 0;
+}
+
+.form-theme-switch label input[type="checkbox"]:checked~span {
+    background-color: #6C16FF;
+    transform: translateY(13px);
+}
+
+.form-theme-switch label input[type="checkbox"]:checked~span img:last-child {
+    opacity: 1;
+}
+
+.form-theme-switch label input[type="checkbox"]:checked~span img:first-child {
+    opacity: 0;
 }
 
 .site-header-area ul.icon-area {
@@ -352,7 +383,8 @@ p{
 
 .site-header-area ul.icon-area li a {
     border-radius: 50%;
-    background-color: rgba(128, 241, 177, 0.7);;
+    background-color: rgba(128, 241, 177, 0.7);
+    ;
     width: 40px;
     height: 40px;
     color: #FCF7F1;
@@ -462,6 +494,7 @@ p{
     border-radius: 20px;
     padding: 36px 45px;
 }
+
 .comments .card .card-body {
     font-style: normal;
     font-weight: 400;
@@ -483,6 +516,7 @@ p{
     color: #343891;
     padding: 0;
 }
+
 .comments .card .card-footer p {
     margin: 0;
     padding: 0;
@@ -506,11 +540,11 @@ p{
     font-size: 36px;
 }
 
-.comments .row > *:nth-child(1n) {
+.comments .row>*:nth-child(1n) {
     padding-left: unset;
 }
 
-.comments .row > *:nth-child(2n) {
+.comments .row>*:nth-child(2n) {
     padding-right: unset;
 }
 
@@ -564,26 +598,27 @@ footer {
     width: 100%;
 }
 
-
 section.login-page .form-wrapper {
     display: flex;
     justify-content: center;
     padding-bottom: 200px;
 }
+
 section.login-page .form-wrapper .row {
-
     justify-content: center;
-
 }
-section.login-page .form-wrapper .form-container{
+
+section.login-page .form-wrapper .form-container {
     width: 100%;
     max-width: 650px;
 }
+
 .form-brand-logo {
     display: flex;
     justify-content: center;
     max-width: 650px;
 }
+
 .form-brand-logo .center-logo {
     width: 190px;
     background-color: #343891;
@@ -592,13 +627,14 @@ section.login-page .form-wrapper .form-container{
     border-bottom-left-radius: 120px;
     border-bottom-right-radius: 120px;
 }
-.form-brand-logo .center-logo img{
 
-}
+.form-brand-logo .center-logo img {}
+
 section.login-page .login-register-buttons {
     margin: 0 -20px;
     margin-bottom: 20px;
 }
+
 section.login-page .login-register-buttons a {
     padding: 10px 20px;
     display: inline-block;
@@ -608,19 +644,18 @@ section.login-page .login-register-buttons a {
     color: #343891;
     text-decoration: none;
 }
-section.login-page .login-register-buttons a.thisPage {
 
+section.login-page .login-register-buttons a.thisPage {
     color: #D9D9D9;
 }
 
-section.login-page .form-wrapper .form-container label  {
-
+section.login-page .form-wrapper .form-container label {
     display: block;
     margin-bottom: 40px;
 }
-section.login-page .form-wrapper .form-container label a  {
 
-    float:right;
+section.login-page .form-wrapper .form-container label a {
+    float: right;
     font-family: 'BrandonGrotesque';
     color: #D9D9D9;
     font-size: 16px;
@@ -628,8 +663,7 @@ section.login-page .form-wrapper .form-container label a  {
     margin-top: 8px;
 }
 
-section.login-page .form-wrapper .form-container label input  {
-
+section.login-page .form-wrapper .form-container label input {
     width: 100%;
     border: 3px solid #D9D9D9;
     border-radius: 20px;
@@ -637,27 +671,26 @@ section.login-page .form-wrapper .form-container label input  {
     font-size: 25px;
     line-height: 36px;
     padding: 10px 20px;
-
-
     color: #D9D9D9;
 }
-section.login-page .form-wrapper .form-container label input[type=checkbox]  {
-width: 28px;
-    height: 28px;
 
+section.login-page .form-wrapper .form-container label input[type=checkbox] {
+    width: 28px;
+    height: 28px;
 }
-section.login-page .form-wrapper .form-container label input[type=checkbox] ~ span{
-   display: inline-block;
+
+section.login-page .form-wrapper .form-container label input[type=checkbox]~span {
+    display: inline-block;
     font-family: 'BrandonGrotesque';
     font-size: 16px;
     line-height: 20px;
     margin-left: 12px;
-
 }
-section.login-page .form-wrapper .form-container form button[type=submit]{
+
+section.login-page .form-wrapper .form-container form button[type=submit] {
     display: block;
     width: 100%;
-    padding:16px 0;
+    padding: 16px 0;
     font-size: 25px;
     line-height: 30px;
     font-weight: 900;
@@ -665,17 +698,14 @@ section.login-page .form-wrapper .form-container form button[type=submit]{
     color: white;
     border-radius: 20px;
     border: none;
-
 }
 
-
-section.login-page .form-wrapper .form-container form .col-two label{
+section.login-page .form-wrapper .form-container form .col-two label {
     width: calc(50% - 10px)
 }
 
-.kvkk-text{
+.kvkk-text {}
 
-}
 .kvkk-text p {
     font-family: 'BrandonGrotesque';
     font-size: 14px;
@@ -685,7 +715,7 @@ section.login-page .form-wrapper .form-container form .col-two label{
     display: inline-block;
     margin-top: 40px;
 }
-.kvkk-text p span{
-    font-family: 'BrandonGrotesqueBold';
 
+.kvkk-text p span {
+    font-family: 'BrandonGrotesqueBold';
 }
