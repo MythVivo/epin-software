@@ -156,6 +156,18 @@ return [
      * Üye Yönetimi
      */
     'uyeYonetimi' => 'Üye Yönetimi',
+    'uyeEkle' => 'Üye Ekle',
+    'uyeIsmi' => 'Üye İsmi',
+    'uyeEposta' => 'Üye E-posta',
+    'uyeSifre' => 'Üye Şifre',
+    'uyeTelefon' => 'Üye Telefon',
+    'uyeBakiye' => 'Üye Bakiye',
+    'uyeGenel' => 'Genel',
+    'uyeSifreAyar' => 'Şifre',
+    'uyeGuvenlik' => 'Güvenlik',
+    'uyeBildirim' => 'Bildirim',
+    'uyeAdresFatura' => 'Adres Fatura',
+    'uyeAktivite' => 'Aktivite',
 
     /*
      * Kategori Yönetimi

@@ -71,6 +71,8 @@ Route::prefix('panel')->middleware('auth')->group(function () {
 
     Route::get('uyeler', [UyeController::class, 'index'])->name('uyeler');
     Route::post('uyeEkle', [UyeController::class, 'add'])->name('uye_add');
+    Route::get('uye-detay/{email}', [UyeController::class, 'detail'])->name('uye_detay');
+    Route::post('uyeDuzenle', [UyeController::class, 'edit'])->name('uye_edit');
 
 
     Route::get('kategoriler', [KategoriController::class, 'index'])->name('kategoriler');

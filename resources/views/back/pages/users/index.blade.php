@@ -15,6 +15,48 @@
     </style>
 @endsection
 @section('body')
+    @if(session('success'))
+        <div class="row" data-lang="{{getLang()}}">
+            <div class="col-12">
+                <div class="alert icon-custom-alert alert-outline-success alert-success-shadow" role="alert">
+                    <i class="mdi mdi-check-all alert-icon"></i>
+                    <div class="alert-text">
+                        <strong>{{__('admin.basarili')}}</strong> {{__('admin.basariliMetin')}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+    @if(session('error'))
+        <div class="row" data-lang="{{getLang()}}">
+            <div class="col-12">
+                <div class="alert icon-custom-alert alert-outline-danger alert-danger-shadow" role="alert">
+                    <i class="mdi mdi-crosshairs alert-icon"></i>
+                    <div class="alert-text">
+                        <strong>{{__('admin.hata-2')}}</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+
+    @if ($errors->any())
+        <div class="row" data-lang="{{getLang()}}">
+            <div class="col-12">
+                <div class="alert icon-custom-alert alert-outline-danger alert-danger-shadow" role="alert">
+                    <i class="mdi mdi-alert alert-icon"></i>
+                    <div class="alert-text">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+
     <div class="row" data-lang="{{getLang()}}">
         <div class="col-12">
             <div class="card">
@@ -57,11 +99,12 @@
                                                            placeholder="@lang('admin.uyeEposta')">
                                                 </div>
                                             </div>
+
                                             <div class="col-sm-6 col-md-4">
                                                 <div class="form-group">
-                                                    <label for="3">@lang('admin.uyeUsername')</label>
-                                                    <input name="username" type="text" class="form-control" id="3"
-                                                           placeholder="@lang('admin.uyeUsername')">
+                                                    <label for="3">@lang('admin.uyeSifre')</label>
+                                                    <input name="password" type="password" class="form-control" id="3"
+                                                           placeholder="@lang('admin.uyeSifre')">
                                                 </div>
                                             </div>
 

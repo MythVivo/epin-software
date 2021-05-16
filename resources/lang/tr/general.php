@@ -7,6 +7,7 @@ return [
     'hata-1' => 'İşlem sırasında bir hata meydana geldi',
 
     'mesaj-1' => 'E-postanızı Onaylayın',
+    'mesaj-2' => 'Hesabınız başarıyla oluşturuldu. Lütfen e-postanıza gelen mail\'i onaylayın.',
 
     /*
      * Anasayfa

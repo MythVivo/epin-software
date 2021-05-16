@@ -470,4 +470,22 @@ function getSiteSenderMail()
     return env('MAIL_FROM_ADDRESS');
 }
 
+function getUserPhoneStatus($id)
+{
+    if(\App\Models\User::find($id)->telefon_verified_at != NULL) {
+        return "<i class='mdi mdi-check text-success'></i>";
+    } else {
+        return "<i class='mdi mdi-alert-outline text-danger'></i>";
+    }
+}
+
+function getUserEmailStatus($id)
+{
+    if(\App\Models\User::find($id)->email_verified_at != NULL) {
+        return "<i class='mdi mdi-check text-success'></i>";
+    } else {
+        return "<i class='mdi mdi-alert-outline text-danger'></i>";
+    }
+}
+
 

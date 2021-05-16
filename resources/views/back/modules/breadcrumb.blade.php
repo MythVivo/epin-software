@@ -12,21 +12,30 @@
                                 {{getGameTitle($link, getLang())}}
                             </a>
                         </li>
+                    @elseif(Route::currentRouteName() == 'uye_detay')
+                        <li class="breadcrumb-item"><a href="{{route('uyeler')}}">@lang('admin.uyeYonetimi')</a></li>
+                        <li class="breadcrumb-item active">
+                            <a href="{{route(Route::currentRouteName(), $email)}}">
+                                {{$email}}
+                            </a>
+                        </li>
                     @else
-                    <li class="breadcrumb-item active">
-                        <a href="{{route(Route::currentRouteName(), '')}}">
+                        <li class="breadcrumb-item active">
+                            <a href="{{route(Route::currentRouteName(), '')}}">
                                 {{getPageTitle(getPage(), getLang())}}
-                        </a>
-                    </li>
+                            </a>
+                        </li>
                     @endif
                 </ol>
             </div>
             <h4 class="page-title">
                 @if(Route::currentRouteName() == 'oyun_detay')
                     {{getGameTitle($link, getLang())}} - @lang('admin.oyunBasliklar')
+                @elseif(Route::currentRouteName() == 'uye_detay')
+                    {{$user->name}} - {{$email}}
                 @else
-                {{getPageTitle(getPage(), getLang())}}
-                    @endif
+                    {{getPageTitle(getPage(), getLang())}}
+                @endif
             </h4>
         </div><!--end page-title-box-->
     </div><!--end col-->

@@ -20,12 +20,6 @@ class RegisterController extends Controller
         request()->validate([
             'email'    => 'required|email|unique:users',
             'password' => 'required|min:6'
-        ], [
-            'email.required' => 'E-posta gereklidir.',
-            'email.email' => 'Lütfen geçerli bir e-posta adresi girin',
-            'email.exists' => 'Böyle bir e-posta zaten var',
-            'password.required' => 'Şifre gereklidir.',
-            'password.min' => 'Şifreniz en az 6 karakter olmalıdır.',
         ]);
 
         $user = new User();
@@ -38,10 +32,11 @@ class RegisterController extends Controller
             $to_name = "".$user->name." ".$user->last_name;
             $to_email = $user->email;
             $data = array('name'=>getSiteName(), "body" => __('general.mesaj-1') . " - " . getSiteName(), 'email'=>$user->email, 'token'=>$user->email_token);
-            $gonderim = Mail::send('emails.active', $data, function($message) use ($to_name, $to_email) {
+            Mail::send('emails.active', $data, function($message) use ($to_name, $to_email) {
                 $message->to($to_email, $to_name)->subject(__('general.mesaj-1') . ' - ' .  getSiteName());
                 $message->from(getSiteSenderMail(), __('general.mesaj-1') . ' - ' .  getSiteName());
             });
+            return route('giris')->with('success', __('general.mesaj-2'));
         } else {
             return __('general.hata-1');
         }
