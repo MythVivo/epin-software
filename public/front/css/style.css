@@ -895,3 +895,50 @@ section.login-page .form-wrapper .form-container form .col-two label {
 .kvkk-text p span {
     font-family: 'BrandonGrotesqueBold';
 }
+
+.form-info {
+    margin: 30px 0;
+}
+
+.form-info figure {
+    background-color: #80F1B1;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    padding: 20px 20px 20px 0;
+}
+
+.form-info figure i {
+    width: 80px;
+    height: 80px;
+    background-color: #343891;
+    color: white;
+    font-size: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 80px;
+    margin-left: -40px;
+}
+
+.form-info figure p {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+    color: #343891;
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+}
+
+.form-info figure ul {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.form-info figure ul li {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #343891;
+}

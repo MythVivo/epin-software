@@ -16,13 +16,27 @@
     <div class="container">
         <div class="form-wrapper">
             <div class="row">
-
-                <div class="form-brand-logo">
-                    <div class="center-logo">
-                        <img src="{{asset(env('root').env('brand').'oyuneks-form-logo.svg')}}">
+                <div class="form-container">
+                    <div class="form-brand-logo">
+                        <div class="center-logo">
+                            <img src="{{asset(env('root').env('brand').'oyuneks-form-logo.svg')}}">
+                        </div>
                     </div>
-                </div>
-                <div class="form-container mt-100">
+
+                    <!--Hata bildirimi--->
+                    <div class="form-info">
+                        <figure>
+                            <i class="fas fa-exclamation"></i>
+                            <p>Hatalı giriş!</p>
+                            <ul>
+                                <li>A</li>
+                                <li>B</li>
+                                <li>C</li>
+                            </ul>
+                        </figure>
+                    </div>
+                    <!--Hata bildirim END--->
+
                     <div class="login-register-buttons">
                         <a class="thisPage">Oturum Aç</a>
                         <a>Kayıt Ol</a>
@@ -46,11 +60,15 @@
                         </div>
 
 
-                        <div class="col-12"><button type="submit">Kayıt ol</button></div>
+                        <div class="col-12">
+                            <button type="submit">Kayıt ol</button>
+                        </div>
                     </form>
 
                     <div class="col-12 kvkk-text text-center">
-                        <p>Kişisel verileriniz, <span>Aydınlatma Metni</span> kapsamında işlenmektedir. “Üye ol” veya “Sosyal Hesap” butonlarından birine basarak  <span>Gizlilik Politikası </span> ile  <span>Üyelik ve Hizmet Alım Sözleşmesi</span>’ni okuduğunuzu ve kabul ettiğinizi onaylıyorsunuz.</p>
+                        <p>Kişisel verileriniz, <span>Aydınlatma Metni</span> kapsamında işlenmektedir. “Üye ol” veya
+                            “Sosyal Hesap” butonlarından birine basarak <span>Gizlilik Politikası </span> ile <span>Üyelik ve Hizmet Alım Sözleşmesi</span>’ni
+                            okuduğunuzu ve kabul ettiğinizi onaylıyorsunuz.</p>
                     </div>
                 </div>
             </div>
