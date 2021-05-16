@@ -5,17 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Logs extends Model
+class LoginsAttempt extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $table = 'logs';
+    protected $table = 'logins_attempt';
 
     protected $fillable = [
         'user',
-        'category',
-        'text',
-        'lang',
+        'chanel',
+        'failed',
         'created_at',
     ];
 }

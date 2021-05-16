@@ -36,9 +36,24 @@ class RegisterController extends Controller
                 $message->to($to_email, $to_name)->subject(__('general.mesaj-1') . ' - ' .  getSiteName());
                 $message->from(getSiteSenderMail(), __('general.mesaj-1') . ' - ' .  getSiteName());
             });
-            return route('giris')->with('success', __('general.mesaj-2'));
+            return redirect()->route('giris')->with('success', __('general.mesaj-2'));
         } else {
             return __('general.hata-1');
+        }
+    }
+
+    public function active($email, $token)
+    {
+        $userFind = User::where('email', $email);
+        if($userFind->count() > 0) {
+            if($userFind->first()->email == $email and $userFind->first()->email_token == $token) {
+                $userFind->update(['email_verified_at' => date('YmdHis')]);
+                return redirect()->route('giris')->with('success', __('general.mesaj-3'));
+            } else {
+                return redirect()->route('giris')->with('error', __('general.hata-6'));
+            }
+        } else {
+            return redirect()->route('giris')->with('error', __('general.hata-5'));
         }
     }
 }

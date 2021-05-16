@@ -23,45 +23,45 @@
                         </div>
                     </div>
 
+                @if ($errors->any())
                     <!--Hata bildirimi--->
-                    <div class="form-info">
-                        <figure>
-                            <i class="fas fa-exclamation"></i>
-                            <p>Hatalı giriş!</p>
-                            <ul>
-                                <li>A</li>
-                                <li>B</li>
-                                <li>C</li>
-                            </ul>
-                        </figure>
+                        <div class="form-info">
+                            <figure>
+                                <i class="fas fa-exclamation"></i>
+                                <p>@lang('general.hata-2')</p>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </figure>
+                        </div>
+                        <!--Hata bildirim END--->
+                    @endif
+
+
+                    <div class="login-register-buttons mt-5">
+                        <a href="{{route('giris')}}">Oturum Aç</a>
+                        <a class="thisPage" href="{{route('kayit')}}">Kayıt Ol</a>
                     </div>
-                    <!--Hata bildirim END--->
-
-                    <div class="login-register-buttons">
-                        <a class="thisPage">Oturum Aç</a>
-                        <a>Kayıt Ol</a>
-                    </div>
-                    <form method="post" class="row">
-                        @csrf
-                        <div class="col-6">
-                            <label><input type="text" name="name_1" placeholder="Ad"></label>
-
-                        </div>
-                        <div class="col-6">
-
-                            <label><input type="text" name="name_2" placeholder="Soyad"></label>
-                        </div>
-
-                        <div class="col-12">
-                            <label><input type="text" name="email" placeholder="E-Posta"></label>
-                        </div>
-                        <div class="col-12">
-                            <label><input type="password" name="password" placeholder="Şifre"></label>
-                        </div>
-
-
-                        <div class="col-12">
-                            <button type="submit">Kayıt ol</button>
+                    <form method="post" action="" autocomplete="off">
+                        <div class="row">
+                            @csrf
+                            <div class="col-6">
+                                <label><input type="text" name="name_1" placeholder="Ad" required></label>
+                            </div>
+                            <div class="col-6">
+                                <label><input type="text" name="name_2" placeholder="Soyad" required></label>
+                            </div>
+                            <div class="col-12">
+                                <label><input type="text" name="email" placeholder="E-Posta"></label>
+                            </div>
+                            <div class="col-12">
+                                <label><input type="password" name="password" placeholder="Şifre"></label>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit">Kayıt ol</button>
+                            </div>
                         </div>
                     </form>
 

@@ -30,6 +30,8 @@ Route::post('/giris', [LoginController::class, 'login_post'])->name('login_post'
 Route::get('/kayit', [RegisterController::class, 'register'])->name('kayit');
 Route::post('/kayit', [RegisterController::class, 'register_post'])->name('kayit_post');
 Route::get('/cikis', [LoginController::class, 'logout'])->name('logout');
+Route::get('/hesap-onayla/{email}/{key}', [RegisterController::class, 'active'])->name('active');
+
 
 /*
  * Lang

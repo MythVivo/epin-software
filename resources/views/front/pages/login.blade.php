@@ -23,42 +23,66 @@
                             <img src="{{asset(env('root').env('brand').'oyuneks-form-logo.svg')}}">
                         </div>
                     </div>
+                @if(session('success'))
+                    <!--Mesaj bildirimi--->
+                        <div class="form-info">
+                            <figure>
+                                <i class="fas fa-exclamation"></i>
+                                <p>{{session('success')}}</p>
+                            </figure>
+                        </div>
+                        <!--Mesaj bildirim END--->
+                @endif
+                @if(session('error'))
+                    <!--Mesaj bildirimi--->
+                        <div class="form-info">
+                            <figure>
+                                <i class="fas fa-exclamation"></i>
+                                <p>{{session('error')}}</p>
+                            </figure>
+                        </div>
+                        <!--Mesaj bildirim END--->
+                @endif
+                @if ($errors->any())
                     <!--Hata bildirimi--->
-                    <div class="form-info">
-                        <figure>
-                            <i class="fas fa-exclamation"></i>
-                            <p>Hatalı giriş!</p>
-                            <ul>
-                                <li>A</li>
-                                <li>B</li>
-                                <li>C</li>
-                            </ul>
-                        </figure>
-                    </div>
-                    <!--Hata bildirim END--->
+                        <div class="form-info">
+                            <figure>
+                                <i class="fas fa-exclamation"></i>
+                                <p>@lang('general.hata-2')</p>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </figure>
+                        </div>
+                        <!--Hata bildirim END--->
+                    @endif
                     <div class="login-register-buttons">
-                        <a class="thisPage">Oturum Aç</a>
-                        <a>Kayıt Ol</a>
+                        <a class="thisPage" href="{{route('giris')}}">Oturum Aç</a>
+                        <a href="{{route('kayit')}}">Kayıt Ol</a>
                     </div>
-                    <form method="post" class="row">
-                        @csrf
-                        <div class="col-12">
-                            <label><input type="text" name="email">
-                                <a>E-Postamı Unuttum</a>
+                    <form method="post">
+                        <div class="row">
+                            @csrf
+                            <div class="col-12">
+                                <label><input type="text" name="email">
+                                    <a>E-Postamı Unuttum</a>
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <label><input type="password" name="password">
+                                    <a>Şifremi Unuttum</a></label>
+                            </div>
+
+                            <label class="d-flex align-items-center">
+                                <input type="checkbox" name="remember">
+                                <span>Beni Hatırla</span>
                             </label>
-                        </div>
-                        <div class="col-12">
-                            <label><input type="password" name="password">
-                                <a>Şifremi Unuttum</a></label>
-                        </div>
 
-                        <label class="d-flex align-items-center">
-                            <input type="checkbox" name="remember">
-                            <span>Beni Hatırla</span>
-                        </label>
-
-                        <div class="col-12">
-                            <button type="submit">Oturum Aç</button>
+                            <div class="col-12">
+                                <button type="submit">Oturum Aç</button>
+                            </div>
                         </div>
                     </form>
                 </div>
