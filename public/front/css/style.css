@@ -933,7 +933,7 @@ section.login-page .form-wrapper .form-container form .col-two label {
 
 .form-info figure ul {
     margin: 0;
-    flex-grow: 1;
+    flex-grow: 2;
 }
 
 .form-info figure ul li {
