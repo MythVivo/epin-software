@@ -28,7 +28,25 @@
             <ul class="nav nav-pills">
                 <li class="nav-item"><i class="far fa-search"></i></li>
                 <li class="nav-item"><a href="{{route('anasayfa')}}" class="nav-link active">Anasayfa</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Knight Online</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Knight Online</a>
+                <ul class="sub-mega-menu container">
+<div class="mega-menu-container">
+<div class="sub-menu-category">
+<h4>Knight Online Ring</h4>
+
+    <div class="menu-sub-category">
+    <a href="" class="msc-link">Sunucular</a>
+    <ul>
+    <li><a href="">Sirius</a></li>
+    <li><a href="">Vega</a></li>
+    <li><a href="">Altar</a></li>
+    </ul>
+    </div>
+    </div>
+</div>
+</ul>
+
+                </li>
                 <li class="nav-item"><a href="#" class="nav-link">Item <span>&</span> Skins</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Steam</a></li>
             </ul>
