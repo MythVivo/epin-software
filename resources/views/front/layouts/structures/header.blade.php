@@ -27,7 +27,7 @@
             </a>
             <ul class="nav nav-pills">
                 <li class="nav-item"><i class="far fa-search"></i></li>
-                <li class="nav-item"><a href="#" class="nav-link active">Anasayfa</a></li>
+                <li class="nav-item"><a href="{{route('')}}" class="nav-link active">Anasayfa</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Knight Online</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Item <span>&</span> Skins</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Steam</a></li>
@@ -39,7 +39,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex justify-content-center" href="{{route('giris')}}">
+                    <a class="nav-link d-flex justify-content-center" href="@if(isset(Auth::user()->id)) {{route('hesabim')}} @else {{route('giris')}} @endif">
                         <i class="fas fa-user align-self-center"></i>
                     </a>
                 </li>
