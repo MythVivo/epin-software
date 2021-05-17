@@ -27,7 +27,7 @@
             </a>
             <ul class="nav nav-pills">
                 <li class="nav-item"><i class="far fa-search"></i></li>
-                <li class="nav-item"><a href="{{route('homepage')}}" class="nav-link active">Anasayfa</a></li>
+                <li class="nav-item"><a href="{{route('babasayfa')}}" class="nav-link active">Anasayfa</a></li>
                 <li class="nav-item"><a href="{{route('oyun_baslik', 'knight-online')}}" class="nav-link">Knight Online</a>
                 <ul class="sub-mega-menu container">
 <div class="mega-menu-container">
