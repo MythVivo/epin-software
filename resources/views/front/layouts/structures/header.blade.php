@@ -27,7 +27,7 @@
             </a>
             <ul class="nav nav-pills">
                 <li class="nav-item"><i class="far fa-search"></i></li>
-                <li class="nav-item"><a href="{{route('')}}" class="nav-link active">Anasayfa</a></li>
+                <li class="nav-item"><a href="{{route('anasayfa')}}" class="nav-link active">Anasayfa</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Knight Online</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Item <span>&</span> Skins</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Steam</a></li>
