@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', [MainController::class, 'index'])->name('anasayfa');
+Route::get('/', [MainController::class, 'index'])->name('homepage');
 
 /*
  * Login - Register İşlemleri
@@ -32,6 +32,11 @@ Route::post('/kayit', [RegisterController::class, 'register_post'])->name('kayit
 Route::get('/cikis', [LoginController::class, 'logout'])->name('logout');
 Route::get('/hesap-onayla/{email}/{key}', [RegisterController::class, 'active'])->name('active');
 
+/*
+ * Oyunlar
+ */
+Route::get('/oyunlar', [MainController::class, 'oyunlar'])->name('oyunlar');
+Route::get('/oyun/{oyun}', [MainController::class, 'oyunlar_baslik'])->name('oyun_baslik');
 
 /*
  * Lang
