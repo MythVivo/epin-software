@@ -29,6 +29,13 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+a[title]:hover:after {
+    content: attr(title);
+    position: absolute;
+    top: -100%;
+    left: 0;
+}
+
 
 /* ======================================== *\
                     Components
