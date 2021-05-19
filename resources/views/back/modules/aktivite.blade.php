@@ -12,11 +12,11 @@
                                     <div class="activity">
                                         <div class="activity-info">
                                             <div class="icon-info-activity">
-                                                <i class="{{findLogsCategory($u->id)->icon}} bg-soft-{{findLogsCategory($u->id)->type}}"></i>
+                                                <i class="{{findLogsCategory($u->category)->icon}} bg-soft-{{findLogsCategory($u->category)->type}}"></i>
                                             </div>
                                             <div class="activity-info-text">
                                                 <div class="d-flex justify-content-between align-items-center">
-                                                    <h6 class="m-0 w-75">{{findLogsCategory($u->id)->title}}</h6>
+                                                    <h6 class="m-0 w-75">{{findLogsCategory($u->category)->title}}</h6>
                                                     <span
                                                         class="text-muted d-block">{{findLogsTime($u->id)}}</span>
                                                 </div>
