@@ -22,12 +22,12 @@
             width: 50px;
         }
 
-        .info-container {
+        .page-container {
             display: flex;
             justify-content: center;
         }
 
-        .info {
+        .page-inner {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -136,8 +136,8 @@
             fill="#80F1B1"/>
     </svg>
 </header>
-<div class=info-container>
-    <div class="info">
+<div class=page-container>
+    <div class="page-inner">
         <h1>Hesabınızı onaylamak için</h1>
         <div class="button-container">
             <a class="btn-inline color-yellow" href="{{route('active', [$email, $token])}}">Hesabı etkinleştir</a>
@@ -212,9 +212,9 @@
 
         </footer>
 
-    </div><!--info END-->
+    </div><!--page-inner END-->
 
-</div><!--info-container END-->
+</div><!--page-container END-->
 
 
 <p>Uyarı: Eğer {{getSiteName()}} websitesine siz kayıt olmadıysanız <a
