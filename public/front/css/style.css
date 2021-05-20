@@ -129,6 +129,7 @@ a[titlex]:hover::after {
 .btn-inline:hover {
     box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.25);
     transform: translateY(-2px);
+    color: inherit !important;
 }
 
 .btn-inline:active {
@@ -1031,12 +1032,12 @@ section.game {
     overflow: hidden;
     margin-bottom: 2rem;
     height: calc(100% - 2rem);
-    transition: all ease-in-out .1s;
+    transition: all cubic-bezier(.71, .81, .18, 1.64) .25s;
 }
 
 .game-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 20px 20px -20px #00000045, 0px 10px 0 0px #80f1b1;
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0px 20px 20px -20px #00000045;
 }
 
 .game-card figure {
@@ -1047,6 +1048,7 @@ section.game {
 
 .game-card figure img {
     width: 100%;
+    transition: all ease-in-out 2s;
 }
 
 .game-card .game-card-description {
@@ -1055,7 +1057,7 @@ section.game {
 
 .game-card .game-card-description .title-button {
     transform: translateY(-50%);
-    border-radius: 0 40px 0px 0px;
+    border-radius: 40px 0px 40px 40px;
 }
 
 .game-card .game-card-description p {
