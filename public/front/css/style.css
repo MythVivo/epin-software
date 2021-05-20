@@ -106,7 +106,7 @@ a[titlex]:hover::after {
 }
 
 .color-yellow.border:hover {
-    color: white;
+    color: white !important;
     background-color: #80F1B1;
 }
 
@@ -122,7 +122,7 @@ a[titlex]:hover::after {
 }
 
 .color-blue.border:hover {
-    color: white;
+    color: white !important;
     background-color: #343891;
 }
 
@@ -199,11 +199,6 @@ a[titlex]:hover::after {
 
 /* ======================================== *\
                     login-register
-\* ======================================== */
-
-
-/* ======================================== *\
-                    games
 \* ======================================== */
 
 p {
@@ -972,6 +967,7 @@ header ul.sub-mega-menu {
     box-shadow: 0 0 0 0 black;
     padding: 2rem;
     font-family: 'Montserrat', sans-serif;
+    visibility: hidden;
 }
 
 header ul.sub-mega-menu .mega-menu-container {}
@@ -1019,3 +1015,50 @@ header ul.sub-mega-menu .sub-menu-category .menu-sub-category ul li a {
 
 
 /*---MEGAMENU END--*/
+
+
+/* ======================================== *\
+                    games
+\* ======================================== */
+
+section.game {
+    padding-top: 140px;
+}
+
+.game-card {
+    border: 1px solid #dfdfdf;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    height: calc(100% - 2rem);
+    transition: all ease-in-out .1s;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 20px 20px -20px #00000045, 0px 10px 0 0px #80f1b1;
+}
+
+.game-card figure {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 0 0 40px 0px;
+}
+
+.game-card figure img {
+    width: 100%;
+}
+
+.game-card .game-card-description {
+    padding: 0 0;
+}
+
+.game-card .game-card-description .title-button {
+    transform: translateY(-50%);
+    border-radius: 0 40px 0px 0px;
+}
+
+.game-card .game-card-description p {
+    padding: 0 20px 30px 20px;
+    margin: 0;
+}
