@@ -44,6 +44,10 @@ a[titlex]:hover::after {
     border-radius: 5px;
 }
 
+.pt-140 {
+    padding-top: 140px;
+}
+
 
 /* ======================================== *\
                     Components
@@ -1063,4 +1067,51 @@ section.game {
 .game-card .game-card-description p {
     padding: 0 20px 30px 20px;
     margin: 0;
+}
+
+.game-aside {
+    padding: 2rem;
+    background-color: #f1f1f1;
+    height: 100%;
+}
+
+.game-aside figure {
+    margin: 0 0;
+    background-color: #80f1b1;
+    border-radius: 20px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0px 10px -7px black;
+    transition: transform cubic-bezier(.71, .81, .18, 1.64) .25s, box-shadow ease-in-out .25s;
+    position: relative;
+}
+
+.game-aside figure:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 6px 10px -4px #0003;
+}
+
+.game-aside figure img {
+    width: 100%;
+    border-radius: 0 0 0 30px;
+}
+
+.game-aside a {
+    background-color: #24265b;
+    padding: 0.6rem;
+    color: white;
+    font-weight: 600;
+    display: block;
+    text-decoration: none;
+    border-radius: 0px 0px 0px 20px;
+    z-index: 5;
+    position: absolute;
+    transform: translateY(-100%);
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+}
+
+.game-aside p {
+    padding: 1rem;
 }
