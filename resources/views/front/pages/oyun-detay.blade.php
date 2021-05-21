@@ -6,17 +6,8 @@ $oyun = \App\Models\Games::where('link', $oyun)->first();
 <section class="pt-140">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
 
-                <div class="game-image">
-
-                </div>
-                <h1 class="heading-primary">{{$oyun->title}}</h1>
-                <p>{!! $oyun->text !!}</p>
-
-
-            </div>
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="game-items">
                     <div class="row">
                         @foreach(\App\Models\GamesTitles::whereNull('deleted_at')->where('status', '1')->where('game',
@@ -31,6 +22,16 @@ $oyun = \App\Models\Games::where('link', $oyun)->first();
                         @endforeach
                     </div>
                 </div>
+            </div>
+            <div class="col-md-12">
+
+                <div class="game-image">
+
+                </div>
+                <h1 class="heading-primary">{{$oyun->title}}</h1>
+                <p>{!! $oyun->text !!}</p>
+
+
             </div>
         </div>
     </div>

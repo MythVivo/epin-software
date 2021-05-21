@@ -1084,6 +1084,7 @@ section.game {
     box-shadow: 0 0px 10px -7px black;
     transition: transform cubic-bezier(.71, .81, .18, 1.64) .25s, box-shadow ease-in-out .25s;
     position: relative;
+    margin-bottom: 24px;
 }
 
 .game-items figure:hover {
