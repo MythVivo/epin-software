@@ -1069,13 +1069,13 @@ section.game {
     margin: 0;
 }
 
-.game-aside {
+.game-items {
     padding: 2rem;
     background-color: #f1f1f1;
     height: 100%;
 }
 
-.game-aside figure {
+.game-items figure {
     margin: 0 0;
     background-color: #80f1b1;
     border-radius: 20px;
@@ -1086,17 +1086,17 @@ section.game {
     position: relative;
 }
 
-.game-aside figure:hover {
+.game-items figure:hover {
     transform: translateY(-10px) scale(1.01);
     box-shadow: 0 6px 10px -4px #0003;
 }
 
-.game-aside figure img {
+.game-items figure img {
     width: 100%;
     border-radius: 0 0 0 30px;
 }
 
-.game-aside a {
+.game-items a {
     background-color: #24265b;
     padding: 0.6rem;
     color: white;
@@ -1112,6 +1112,6 @@ section.game {
     width: 100%;
 }
 
-.game-aside p {
+.game-items p {
     padding: 1rem;
 }
