@@ -75,6 +75,10 @@ a[titlex]:hover::after {
     transition: all cubic-bezier(0.23, 1, 0.32, 1) .3s;
 }
 
+.btn-inline.small {
+    padding: 10px 20px;
+}
+
 .btn-inline.left-arrow::before {
     content: '\f323';
     font-family: 'Font Awesome 5 Pro';
@@ -1096,6 +1100,7 @@ section.game {
     transition: transform cubic-bezier(.71, .81, .18, 1.64) .25s, box-shadow ease-in-out .25s;
     position: relative;
     margin-bottom: 24px;
+    cursor: pointer;
 }
 
 .game-items figure:hover {
@@ -1126,4 +1131,91 @@ section.game {
 
 .game-items p {
     padding: 1rem;
+}
+
+.game-info-col {}
+
+.game-info-col img {
+    display: block;
+    width: 100%;
+}
+
+.items-collection-wrapper {
+    padding: 1rem;
+}
+
+.items-collection-wrapper .item-col-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: .5rem;
+    border: 1px solid #dfdfdf;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all ease-in-out .25s;
+}
+
+.items-collection-wrapper .item-col-wrapper:hover {
+    box-shadow: 0 0 30px -20px #000;
+}
+
+.items-collection-wrapper .item-col-wrapper figure img {
+    display: block;
+    width: auto;
+    height: 120px;
+}
+
+.items-collection-wrapper .item-col-wrapper figure,
+.items-collection-wrapper .item-col-wrapper .item-col-center,
+.items-collection-wrapper .item-col-wrapper .item-col-buy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.items-collection-wrapper .item-col-wrapper figure {
+    margin: 0;
+    flex: 1;
+}
+
+.items-collection-wrapper .item-col-wrapper .item-col-center {
+    flex: 10;
+    flex-direction: column;
+}
+
+.items-collection-wrapper .item-col-wrapper .item-col-center h5 {
+    color: #24265B;
+}
+
+.items-collection-wrapper .item-col-wrapper .item-col-center h3 {
+    font-size: 16px;
+}
+
+.items-collection-wrapper .item-col-wrapper .item-col-buy {
+    position: relative;
+    flex: 2;
+    flex-direction: column;
+    border-left: 1px solid #d9f0e3;
+    background-color: #eff7f2;
+}
+
+.items-collection-wrapper .item-col-wrapper .item-col-buy p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+.items-collection-wrapper .item-col-wrapper .item-col-buy p span {
+    font-size: 16px;
+}
+
+.items-collection-wrapper .item-col-wrapper .item-col-buy .btn-inline.small {
+    padding: 10px 20px;
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+    position: absolute;
+    bottom: 0;
 }

@@ -7,23 +7,39 @@
 
 
     @if($baslik->type = 2)
+    <section class="game pt-140">
         <div class="container">
 
             <div class="row">
 
                 <div class="col-4">
+                    <div class="game-info-col">
+                        <figure>
                     <img src="{{asset(env('root').env('front').env('games_titles').$baslik->image)}}">
-                    {{$baslik->title}}
-                    {{$baslik->text}}
-                </div>
+                    </figure>
+                    <h5 class="heading-secondary">{{$baslik->title}}</h5>
 
+                    <p>{!! $baslik->text !!}</p>
+                </div>
+                </div>
                 <div class="col-8">
+                    <div class="items-collection-wrapper">
                     @foreach(\App\Models\GamesPackages::where('games_titles', $baslik->id)->get() as $u)
-                        <img src="{{asset(env('root').env('front').env('games_packages').$u->image)}}">
-                        {{$u->title}}
-                        {{$u->text}}
-                        {{findGamesPackagesPrice($u->id)}}
-                        <button data-toggle="modal" data-target="#satin-al{{$u->id}}">@lang('general.satin-al')</button>
+                    <article class="item-col-wrapper">
+                        <figure><img src="{{asset(env('root').env('front').env('games_packages').$u->image)}}"></figure>
+                        <div class="item-col-center">
+                        <h5 class="heading-secondary">{{$u->title}}</h5>
+                        <h6>{!! $u->text !!}</h6>
+
+                        </div>
+                        <div class="item-col-buy">
+                        <p><span>₺</span>{{findGamesPackagesPrice($u->id)}}</p>
+                        <button class="btn-inline color-yellow small" data-toggle="modal" data-target="#satin-al{{$u->id}}">@lang('general.satin-al')</button>
+
+                        </div>
+
+
+                    </article>
                         <!-- Modal -->
                         <div class="modal fade" id="satin-al{{$u->id}}" tabindex="-1" role="dialog"
                              aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -51,12 +67,15 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Modal END -->
                     @endforeach
+                    </div>
                 </div>
 
             </div>
 
         </div>
+</section>
     @endif
 
 
