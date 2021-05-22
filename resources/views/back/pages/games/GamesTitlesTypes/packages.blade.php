@@ -1,6 +1,6 @@
 @foreach(\App\Models\GamesPackages::where('games_titles', $u->id)->get() as $uu)
     <h5 class="altBaslik">
-        {{$uu->title}} - ₺{{findGamesPackagesPrice($uu->id)}}
+        {{$uu->title}} - ₺{{findGamesPackagesPrice($uu->id)}} <br>
     </h5>
 @endforeach
 <div class="card-bottom">

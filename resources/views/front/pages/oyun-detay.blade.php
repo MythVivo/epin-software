@@ -12,9 +12,9 @@ $oyun = \App\Models\Games::where('link', $oyun)->first();
                         @foreach(\App\Models\GamesTitles::whereNull('deleted_at')->where('status', '1')->where('game',
                         $oyun->id)->get() as $u)
                         <div class="col-md-3">
-                            <figure>
+                            <figure onclick="location.href='{{route('baslik_detay', [$oyun->link, $u->link])}}'">
                                 <img src="{{asset(env('root').env('front').env('games_titles').$u->image)}}">
-                                <a href="#"> {{$u->title}} </a>
+                                <a href="{{route('baslik_detay', [$oyun->link, $u->link])}}"> {{$u->title}} </a>
                                 <p>{!! Str::limit(strip_tags($u->text), $limit = 100, $end = '...') !!}</p>
                             </figure>
                         </div>

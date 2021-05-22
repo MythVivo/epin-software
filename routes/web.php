@@ -37,7 +37,9 @@ Route::get('/hesap-onayla/{email}/{key}', [RegisterController::class, 'active'])
  */
 Route::get('/oyunlar', [MainController::class, 'oyunlar'])->name('oyunlar');
 Route::get('/oyun/{oyun}', [MainController::class, 'oyunlar_baslik'])->name('oyun_baslik');
+Route::get('/oyun/{oyun}/{baslik}', [MainController::class, 'baslik_detay'])->name('baslik_detay');
 
+Route::get('/urun-onizle', [MainController::class, 'urun_onizle'])->name('urun_onizle');
 /*
  * Lang
  */

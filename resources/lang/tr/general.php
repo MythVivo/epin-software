@@ -34,4 +34,6 @@ return [
     'iletisim' => 'İletişim',
     'destek' => 'Destek',
     'sifremiUnuttum' => 'Şifremi Unuttum',
+    'satin-al' => 'Satın Al',
+    'adet' => 'Adet',
 ];
