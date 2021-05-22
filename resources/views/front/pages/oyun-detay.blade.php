@@ -3,10 +3,9 @@
 <?php
 $oyun = \App\Models\Games::where('link', $oyun)->first();
 ?>
-<section class="pt-140">
+<section class="game-item-list pt-140">
     <div class="container">
         <div class="row">
-
             <div class="col-md-12">
                 <div class="game-items">
                     <div class="row">
@@ -23,12 +22,18 @@ $oyun = \App\Models\Games::where('link', $oyun)->first();
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+<section class="">
+    <div class="container">
+        <div class="row">
             <div class="col-md-12">
 
                 <div class="game-image">
 
                 </div>
-                <h1 class="heading-primary">{{$oyun->title}}</h1>
+                <h1 class="heading-primary mt-40 mb-40">{{$oyun->title}}</h1>
                 <p>{!! $oyun->text !!}</p>
 
 
@@ -36,5 +41,4 @@ $oyun = \App\Models\Games::where('link', $oyun)->first();
         </div>
     </div>
 </section>
-
 @endsection

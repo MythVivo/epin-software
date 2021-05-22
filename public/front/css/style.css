@@ -222,6 +222,14 @@ p {
     margin-bottom: 100px;
 }
 
+.mt-40 {
+    margin-top: 40px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
 .mb-30 {
     margin-bottom: 30px;
 }
@@ -403,7 +411,7 @@ p {
     position: absolute;
     z-index: 2;
     width: 100%;
-    background-color: transparent;
+    background-color: #24265b;
     transition: all ease-in-out .6s;
 }
 
@@ -424,7 +432,7 @@ p {
 }
 
 .site-logo img {
-    width: 243px;
+    width: 160px;
 }
 
 .site-header-area ul.nav-pills {
@@ -1069,9 +1077,12 @@ section.game {
     margin: 0;
 }
 
+.game-item-list {
+    background-color: #eaeaea;
+}
+
 .game-items {
-    padding: 2rem;
-    background-color: #f1f1f1;
+    padding: 2rem 0;
     height: 100%;
 }
 
