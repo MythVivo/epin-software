@@ -167,24 +167,23 @@
         <img src="">
     </figure>
     <div class="message">
-        <h1>Sayın {{$user}}, {{getSiteName()}} web sitesine hoşgeldiniz. Tüm duyurulardan haberdar olmak için hesap
-            ayarlarınızdan sms ve e-posta bildirimlerinizi aktif edin.</h1>
+        <h1>Sayın {{$user}}, {{getSiteName()}} web sitesine hoşgeldiniz.</h1>
         <div class="button-container">
-            <a class="btn-inline color-yellow" href="{{route('active', [$email, $token])}}">Hesabı etkinleştir</a>
+            <a class="btn-inline color-yellow" href="{{route('oyunlar')}}">Oyunlar</a>
         </div>
     </div>
 
 
     <div class="text">
-        <h3>Açıklama başlığı</h3>
-        <p>Açıklama Metni</p>
+        <h3>{{getSiteName()}}</h3>
+        <p>Hızlı, Güvenilir, Ucuz!</p>
         <p>Sayın {{$user}}, {{getSiteName()}} web sitesine hoşgeldiniz. Tüm duyurulardan haberdar olmak için hesap
             ayarlarınızdan sms ve e-posta bildirimlerinizi aktif edin.</p>
 
         <p>Uyarı: Eğer {{getSiteName()}} websitesine siz kayıt olmadıysanız <a
                     href="mailto:{{getSiteContactEmail()}}">buradan</a> bize bildirin.</p>
 
-        <a class="btn-inline color-blue" href="{{route('active', [$email, $token])}}">Hesabı etkinleştir</a>
+        <a class="btn-inline color-blue" href="{{route('oyunlar')}}">Oyunlar</a>
 
     </div>
 
