@@ -27,7 +27,12 @@ class MainController extends Controller
         return view('front.pages.baslik-detay')->with('oyun', $oyun)->with('baslik', $baslik);
     }
 
-    public function urun_onizle(Request $request)
+    public function urun_onizle()
+    {
+        return view('front.pages.urun-onizle')->with('package', '0')->with('adet', '0');
+    }
+
+    public function urun_onizle_post(Request $request)
     {
         return view('front.pages.urun-onizle')->with('package', $request->package)->with('adet', $request->adet);
     }

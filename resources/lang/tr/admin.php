@@ -198,6 +198,7 @@ return [
     'baslikResmi' => 'Başlık Resmi',
     'baslikResimSec' => 'Resmi satıcı yükleyebilir',
     'baslikOzel' => 'Özel Seçim',
+    'baslikSil' => 'Başlığı Sil',
     'ozellikEkle' => 'Özellik Ekle',
     'paketEkle' => 'Paket Ekle',
     'paketBasligi' => 'Paket Başlığı',
@@ -209,4 +210,9 @@ return [
     'paketIndirimTutari' => 'İndirim Tutarı',
     'paketMetni' => 'Paket Metni',
     'paketResmi' => 'Paket Resmi',
+    'kodEkle' => 'Kod Ekle',
+    'kodGoruntule' => 'Kod Görüntüle',
+    'kullanildi' => 'Kullanılmış',
+    'kullanilmadi' => 'Kullanılmadı',
+
 ];

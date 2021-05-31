@@ -34,40 +34,41 @@
                         </div>
                         <div class="item-col-buy">
                         <p><span>₺</span>{{findGamesPackagesPrice($u->id)}}</p>
-                        <button class="btn-inline color-yellow small" data-toggle="modal" data-target="#satin-al{{$u->id}}">@lang('general.satin-al')</button>
-
+                        <button type="button" class="btn-inline color-yellow small" data-bs-toggle="modal" data-bs-target=".satinAl{{$u->id}}">@lang('general.satin-al')</button>
+                            <!-- Modal -->
+                            <div class="modal fade satinAl{{$u->id}}" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">@lang('general.satin-al')</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <?php
+                                        $maxStok = DB::table('games_packages_codes')->where('package_id', $u->id)->where('is_used', '0')->count();
+                                        ?>
+                                        <form method="post" action="{{route('urun_onizle_post')}}">
+                                            <div class="modal-body">
+                                                @csrf
+                                                <input type="hidden" name="package" value="{{$u->id}}">
+                                                <label>@lang('general.adet')</label>
+                                                <input max="{{$maxStok}}" min="1" class="form-control" type="number" name="adet" required>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">@lang('admin.kapat')</button>
+                                                <button type="submit" class="btn btn-primary">@lang('admin.kaydet')</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal END -->
                         </div>
 
 
                     </article>
-                        <!-- Modal -->
-                        <div class="modal fade" id="satin-al{{$u->id}}" tabindex="-1" role="dialog"
-                             aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">@lang('general.satin-al')</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <form method="post" action="{{route('urun_onizle')}}">
-                                        <div class="modal-body">
-                                            @csrf
-                                            <input type="hidden" name="package" value="{{$u->id}}">
-                                            <label>@lang('general.adet')</label>
-                                            <input type="number" name="adet">
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">@lang('admin.kapat')</button>
-                                            <button type="submit" class="btn btn-primary">@lang('admin.kaydet')</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Modal END -->
+
                     @endforeach
                     </div>
                 </div>

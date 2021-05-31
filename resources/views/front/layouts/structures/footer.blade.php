@@ -8,12 +8,12 @@
                     </div>
                     <p class="copyright-text">&copy; <?=date('Y')?> Tüm Hakları Saklıdır.</p>
                     <ul class=social-links>
-                    <li><a><i class="fab fa-instagram"></i></a></li>
-                    <li><a><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a><i class="fab fa-twitter"></i></a></li>
-                    <li><a><i class="fab fa-youtube"></i></a></li>
-                    <li><a><i class="fab fa-tiktok"></i></a></li>
-                    <li><a><i class="fab fa-whatsapp"></i></a></li>
+                        <li><a><i class="fab fa-instagram"></i></a></li>
+                        <li><a><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a><i class="fab fa-twitter"></i></a></li>
+                        <li><a><i class="fab fa-youtube"></i></a></li>
+                        <li><a><i class="fab fa-tiktok"></i></a></li>
+                        <li><a><i class="fab fa-whatsapp"></i></a></li>
                     </ul>
                 </div>
                 <div class="footer-top-right col-sm-6">
@@ -62,19 +62,19 @@
             </div>
         </div>
         <div class="footer-center">
-<div class="col-sm-12 col-md">
-<p class="text-center">ifeelcode</p>
-</div>
+            <div class="col-sm-12 col-md">
+                <p class="text-center">ifeelcode</p>
+            </div>
         </div>
         <div class="footer-bottom">
-           <div class="col-sm-12 col-md">
-           <div class="payment-method">
-           <span></span>
-           <span></span>
-           <span></span>
-           <span></span>
-           </div>
-           </div>
+            <div class="col-sm-12 col-md">
+                <div class="payment-method">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -86,7 +86,8 @@
 <script src="{{asset(env('root').env('front').env('js').'jquery.min.js')}}"></script>
 <script src="{{asset(env('root').env('front').env('js').'owlcarousel/owl.carousel.min.js')}}"></script>
 
-
+<script src="{{asset(env('root').env('front').env('js').'popper.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 <script src="{{asset(env('root').env('front').env('js').'custom.js')}}"></script>
 @yield('js')
 </html>

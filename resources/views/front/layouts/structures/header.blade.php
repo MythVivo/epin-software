@@ -16,39 +16,44 @@
 
     <!-- font awesome -->
     <link rel="stylesheet" href="{{asset(env('root').env('front').env('vendors').'fontawesome/css/all.css')}}">
+
+    @yield('css')
 </head>
 <body>
-<div class="site-header-area">
+<div class="site-header-area @if(getPage() == '/') main-page @endif">
     <div class="container">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
-            <a href="/"
+            <a href="{{route('homepage')}}"
                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none site-logo">
                 <img src="{{asset(env('root').env('brand').'brandlogo.png')}}">
             </a>
             <ul class="nav nav-pills">
                 <li class="nav-item"><i class="far fa-search"></i></li>
                 <li class="nav-item"><a href="{{route('homepage')}}" class="nav-link active">Anasayfa</a></li>
-                <li class="nav-item"><a href="{{route('oyun_baslik', 'knight-online')}}" class="nav-link">Knight Online</a>
-                <ul class="sub-mega-menu container">
-<div class="mega-menu-container">
-<div class="sub-menu-category">
-<h4>Knight Online Ring</h4>
+                <li class="nav-item">
+                    <a href="{{route('oyun_baslik', 'knight-online')}}" class="nav-link">
+                        Knight Online
+                    </a>
+                    <ul class="sub-mega-menu container">
+                        <div class="mega-menu-container">
+                            <div class="sub-menu-category">
+                                <h4>Knight Online Ring</h4>
 
-    <div class="menu-sub-category">
-    <a href="" class="msc-link">Sunucular</a>
-    <ul>
-    <li><a href="">Sirius</a></li>
-    <li><a href="">Vega</a></li>
-    <li><a href="">Altar</a></li>
-    </ul>
-    </div>
-    </div>
-</div>
-</ul>
+                                <div class="menu-sub-category">
+                                    <a href="" class="msc-link">Sunucular</a>
+                                    <ul>
+                                        <li><a href="">Sirius</a></li>
+                                        <li><a href="">Vega</a></li>
+                                        <li><a href="">Altar</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
 
                 </li>
                 <li class="nav-item"><a href="#" class="nav-link">Item <span>&</span> Skins</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Steam</a></li>
+                <li class="nav-item"><a href="{{route('oyunlarTum')}}" class="nav-link">Oyunlar</a></li>
             </ul>
             <ul class="nav icon-area text-right">
                 <li class="nav-item">
@@ -57,7 +62,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex justify-content-center" titlex="giriş" href="@if(isset(Auth::user()->id)) {{route('hesabim')}} @else {{route('giris')}} @endif">
+                    <a class="nav-link d-flex justify-content-center" titlex="giriş"
+                       href="@if(isset(Auth::user()->id)) {{route('hesabim')}} @else {{route('giris')}} @endif">
                         <i class="fas fa-user align-self-center"></i>
                     </a>
                 </li>
@@ -68,14 +74,14 @@
                 </li>
                 <li class="nav-item">
                     <div class="form-theme-switch">
-                    <label>
-                    <input class="change-theme" type="checkbox" id="flexSwitchCheckDefault">
-                    <span>
+                        <label>
+                            <input class="change-theme" type="checkbox" id="flexSwitchCheckDefault">
+                            <span>
                     <img src="{{asset('/public/front/images/icons/type_sun.png')}}">
                     <img src="{{asset('/public/front/images/icons/type_night.png')}}">
                     </span>
 
-                    </label>
+                        </label>
 
                     </div>
                 </li>

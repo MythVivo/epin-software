@@ -6,6 +6,7 @@ use App\Models\Games;
 use App\Models\GamesPackages;
 use App\Models\GamesTitles;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class OyunController extends Controller
@@ -136,5 +137,18 @@ class OyunController extends Controller
         } else {
             return back()->with('success', __('admin.basarili'));
         }
+    }
+
+    public function oyun_paket_kod_add(Request $request)
+    {
+        $lines = explode("\n", $request->code);
+        foreach ($lines as $line) {
+            DB::table('games_packages_codes')->insert([
+                'package_id' => $request->games_titles_package,
+                'code' => trim($line),
+                'created_at' => date('Ymdhis'),
+            ]);
+        }
+        return back()->with('success', __('admin.basarili'));
     }
 }
