@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1:3306
--- Üretim Zamanı: 22 May 2021, 13:59:47
+-- Üretim Zamanı: 31 May 2021, 11:29:14
 -- Sunucu sürümü: 5.7.31
 -- PHP Sürümü: 7.4.9
 
@@ -232,6 +232,36 @@ INSERT INTO `games_packages` (`id`, `games_titles`, `title`, `text`, `image`, `p
 -- --------------------------------------------------------
 
 --
+-- Tablo için tablo yapısı `games_packages_codes`
+--
+
+DROP TABLE IF EXISTS `games_packages_codes`;
+CREATE TABLE IF NOT EXISTS `games_packages_codes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `package_id` int(11) NOT NULL,
+  `code` text,
+  `is_used` int(11) NOT NULL DEFAULT '0',
+  `created_at` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+--
+-- Tablo döküm verisi `games_packages_codes`
+--
+
+INSERT INTO `games_packages_codes` (`id`, `package_id`, `code`, `is_used`, `created_at`) VALUES
+(1, 1, 'XXXX-XXXX-XXXX-XXXA', 0, '2021-05-29 01:33:12'),
+(2, 1, 'XXXX-XXXX-XXXX-XXXB', 0, '2021-05-29 01:33:12'),
+(3, 1, 'XXXX-XXXX-XXXX-XXXC', 0, '2021-05-29 01:33:12'),
+(4, 1, 'XXXX-XXXX-XXXX-XXXD', 0, '2021-05-29 01:33:12'),
+(5, 1, 'XXXX-XXXX-XXXX-XXXE', 0, '2021-05-29 01:33:12'),
+(6, 1, 'XXXX-XXXX-XXXX-XXXF', 0, '2021-05-29 01:33:12'),
+(7, 1, 'XXXX-XXXX-XXXX-XXXG', 0, '2021-05-29 01:33:12'),
+(8, 1, 'XXXX-XXXX-XXXX-XXXH', 0, '2021-05-29 01:33:12');
+
+-- --------------------------------------------------------
+
+--
 -- Tablo için tablo yapısı `games_titles`
 --
 
@@ -296,7 +326,7 @@ CREATE TABLE IF NOT EXISTS `istatistik` (
   `ms` text,
   `tekil` int(11) DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=996 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=1252 DEFAULT CHARSET=latin1;
 
 --
 -- Tablo döküm verisi `istatistik`
@@ -1298,7 +1328,264 @@ INSERT INTO `istatistik` (`id`, `ip`, `date`, `page`, `device`, `browser`, `ms`,
 (992, '127.0.0.1', '2021-05-22 16:37:08', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
 (993, '127.0.0.1', '2021-05-22 16:41:52', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
 (994, '127.0.0.1', '2021-05-22 16:45:47', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
-(995, '127.0.0.1', '2021-05-22 16:48:18', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0);
+(995, '127.0.0.1', '2021-05-22 16:48:18', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(996, '127.0.0.1', '2021-05-22 18:33:36', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(997, '127.0.0.1', '2021-05-22 20:00:39', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(998, '127.0.0.1', '2021-05-22 20:01:42', 'oyun/knight-online', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(999, '127.0.0.1', '2021-05-22 20:01:45', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1000, '127.0.0.1', '2021-05-24 10:13:30', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 1),
+(1001, '127.0.0.1', '2021-05-24 10:13:33', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1002, '127.0.0.1', '2021-05-24 10:13:37', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1003, '127.0.0.1', '2021-05-24 10:14:17', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1004, '127.0.0.1', '2021-05-24 10:26:53', 'hesabim', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1005, '127.0.0.1', '2021-05-24 10:30:30', 'oyun/knight-online', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1006, '127.0.0.1', '2021-05-24 10:30:33', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1007, '127.0.0.1', '2021-05-24 18:14:31', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1008, '127.0.0.1', '2021-05-24 18:14:34', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1009, '127.0.0.1', '2021-05-24 18:14:36', 'hesabim', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1010, '127.0.0.1', '2021-05-24 18:14:42', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1011, '127.0.0.1', '2021-05-24 18:14:44', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1012, '127.0.0.1', '2021-05-24 18:14:45', 'hesabim', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1013, '127.0.0.1', '2021-05-24 18:15:07', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1014, '127.0.0.1', '2021-05-24 18:15:27', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1015, '127.0.0.1', '2021-05-24 18:15:29', 'hesabim', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1016, '127.0.0.1', '2021-05-25 03:17:30', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 1),
+(1017, '127.0.0.1', '2021-05-27 17:48:54', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 1),
+(1018, '127.0.0.1', '2021-05-27 17:48:56', 'oyun/knight-online', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1019, '127.0.0.1', '2021-05-27 17:48:57', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1020, '127.0.0.1', '2021-05-27 17:49:34', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1021, '127.0.0.1', '2021-05-27 17:50:59', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1022, '127.0.0.1', '2021-05-27 17:51:20', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1023, '127.0.0.1', '2021-05-27 17:52:04', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1024, '127.0.0.1', '2021-05-27 17:53:28', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1025, '127.0.0.1', '2021-05-27 17:53:39', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1026, '127.0.0.1', '2021-05-27 17:53:45', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1027, '127.0.0.1', '2021-05-27 17:53:59', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1028, '127.0.0.1', '2021-05-27 17:54:00', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1029, '127.0.0.1', '2021-05-27 17:55:15', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1030, '127.0.0.1', '2021-05-27 17:55:21', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1031, '127.0.0.1', '2021-05-27 17:55:46', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1032, '127.0.0.1', '2021-05-27 17:56:01', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1033, '127.0.0.1', '2021-05-27 17:56:26', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1034, '127.0.0.1', '2021-05-27 17:56:30', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1035, '127.0.0.1', '2021-05-27 17:56:32', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1036, '127.0.0.1', '2021-05-27 17:56:51', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1037, '127.0.0.1', '2021-05-27 17:56:58', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1038, '127.0.0.1', '2021-05-27 17:57:16', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1039, '127.0.0.1', '2021-05-27 17:58:01', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1040, '127.0.0.1', '2021-05-27 21:42:58', 'oyun/knight-online', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1041, '127.0.0.1', '2021-05-27 21:43:41', 'oyunlar', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1042, '127.0.0.1', '2021-05-27 21:43:47', 'oyun/league-of-legends', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1043, '127.0.0.1', '2021-05-27 21:43:58', 'oyun/knight-online', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1044, '127.0.0.1', '2021-05-27 21:43:59', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1045, '127.0.0.1', '2021-05-27 21:48:06', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1046, '127.0.0.1', '2021-05-27 21:52:55', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1047, '127.0.0.1', '2021-05-27 21:53:13', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1048, '127.0.0.1', '2021-05-27 21:53:51', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1049, '127.0.0.1', '2021-05-27 21:53:56', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1050, '127.0.0.1', '2021-05-27 21:53:58', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1051, '127.0.0.1', '2021-05-27 21:55:57', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1052, '127.0.0.1', '2021-05-27 21:57:01', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1053, '127.0.0.1', '2021-05-27 22:14:18', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1054, '127.0.0.1', '2021-05-27 22:18:16', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1055, '127.0.0.1', '2021-05-27 22:18:53', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1056, '127.0.0.1', '2021-05-27 22:19:10', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1057, '127.0.0.1', '2021-05-27 22:20:29', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1058, '127.0.0.1', '2021-05-27 22:20:39', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1059, '127.0.0.1', '2021-05-28 18:24:36', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 1),
+(1060, '127.0.0.1', '2021-05-28 18:24:49', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1061, '127.0.0.1', '2021-05-28 18:24:57', 'oyun/knight-online', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1062, '127.0.0.1', '2021-05-28 18:24:58', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1063, '127.0.0.1', '2021-05-28 18:25:15', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1064, '127.0.0.1', '2021-05-28 18:25:44', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1065, '127.0.0.1', '2021-05-28 18:26:11', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1066, '127.0.0.1', '2021-05-28 18:26:30', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1067, '127.0.0.1', '2021-05-29 12:06:30', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 1),
+(1068, '127.0.0.1', '2021-05-29 12:07:14', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1069, '127.0.0.1', '2021-05-29 12:07:15', 'hesabim', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1070, '127.0.0.1', '2021-05-29 12:14:22', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1071, '127.0.0.1', '2021-05-29 12:30:14', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1072, '127.0.0.1', '2021-05-29 13:17:58', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1073, '127.0.0.1', '2021-05-29 13:43:21', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1074, '127.0.0.1', '2021-05-29 13:43:23', 'oyun/knight-online', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1075, '127.0.0.1', '2021-05-29 13:43:24', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1076, '127.0.0.1', '2021-05-29 13:44:21', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1077, '127.0.0.1', '2021-05-29 13:44:48', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1078, '127.0.0.1', '2021-05-29 13:47:13', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1079, '127.0.0.1', '2021-05-29 13:47:20', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0);
+INSERT INTO `istatistik` (`id`, `ip`, `date`, `page`, `device`, `browser`, `ms`, `tekil`) VALUES
+(1080, '127.0.0.1', '2021-05-29 13:54:23', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1081, '127.0.0.1', '2021-05-29 13:56:07', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1082, '127.0.0.1', '2021-05-29 13:56:10', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1083, '127.0.0.1', '2021-05-29 13:56:53', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1084, '127.0.0.1', '2021-05-29 14:07:10', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1085, '127.0.0.1', '2021-05-29 14:09:07', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1086, '127.0.0.1', '2021-05-29 14:09:28', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1087, '127.0.0.1', '2021-05-29 14:10:30', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1088, '127.0.0.1', '2021-05-29 14:46:17', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1089, '127.0.0.1', '2021-05-29 14:46:50', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1090, '127.0.0.1', '2021-05-29 15:15:13', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1091, '127.0.0.1', '2021-05-29 15:21:09', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1092, '127.0.0.1', '2021-05-29 15:21:47', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1093, '127.0.0.1', '2021-05-29 15:22:15', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1094, '127.0.0.1', '2021-05-29 15:22:33', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1095, '127.0.0.1', '2021-05-29 15:22:55', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1096, '127.0.0.1', '2021-05-29 15:23:23', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1097, '127.0.0.1', '2021-05-29 15:25:39', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1098, '127.0.0.1', '2021-05-29 15:25:55', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1099, '127.0.0.1', '2021-05-29 15:26:50', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1100, '127.0.0.1', '2021-05-29 15:27:20', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1101, '127.0.0.1', '2021-05-29 15:27:30', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1102, '127.0.0.1', '2021-05-29 15:27:49', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1103, '127.0.0.1', '2021-05-29 15:28:06', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1104, '127.0.0.1', '2021-05-29 15:28:14', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1105, '127.0.0.1', '2021-05-29 15:28:23', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1106, '127.0.0.1', '2021-05-29 15:28:31', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1107, '127.0.0.1', '2021-05-29 15:48:35', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1108, '127.0.0.1', '2021-05-29 15:48:41', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1109, '127.0.0.1', '2021-05-29 15:48:46', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1110, '127.0.0.1', '2021-05-29 15:50:41', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1111, '127.0.0.1', '2021-05-29 15:50:54', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1112, '127.0.0.1', '2021-05-29 15:51:03', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1113, '127.0.0.1', '2021-05-29 15:51:08', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1114, '127.0.0.1', '2021-05-29 15:51:51', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1115, '127.0.0.1', '2021-05-29 15:52:25', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1116, '127.0.0.1', '2021-05-29 15:52:32', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1117, '127.0.0.1', '2021-05-29 15:52:39', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1118, '127.0.0.1', '2021-05-29 15:52:44', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1119, '127.0.0.1', '2021-05-29 15:52:49', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1120, '127.0.0.1', '2021-05-29 15:53:56', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1121, '127.0.0.1', '2021-05-29 15:54:03', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1122, '127.0.0.1', '2021-05-29 15:55:26', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1123, '127.0.0.1', '2021-05-29 15:55:31', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1124, '127.0.0.1', '2021-05-29 16:09:25', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1125, '127.0.0.1', '2021-05-29 16:09:28', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1126, '127.0.0.1', '2021-05-29 16:09:38', 'oyun/knight-online', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1127, '127.0.0.1', '2021-05-29 16:09:39', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1128, '127.0.0.1', '2021-05-29 16:10:12', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1129, '127.0.0.1', '2021-05-29 16:10:23', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1130, '127.0.0.1', '2021-05-29 16:10:29', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1131, '127.0.0.1', '2021-05-29 16:10:32', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1132, '127.0.0.1', '2021-05-29 16:10:38', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1133, '127.0.0.1', '2021-05-29 16:10:59', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1134, '127.0.0.1', '2021-05-29 16:11:22', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1135, '127.0.0.1', '2021-05-29 16:12:48', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1136, '127.0.0.1', '2021-05-29 16:13:09', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1137, '127.0.0.1', '2021-05-29 16:13:13', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1138, '127.0.0.1', '2021-05-29 16:13:26', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1139, '127.0.0.1', '2021-05-29 16:13:45', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1140, '127.0.0.1', '2021-05-29 16:14:22', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1141, '127.0.0.1', '2021-05-29 16:14:25', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1142, '127.0.0.1', '2021-05-29 16:14:28', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1143, '127.0.0.1', '2021-05-29 16:14:30', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1144, '127.0.0.1', '2021-05-29 16:14:34', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1145, '127.0.0.1', '2021-05-29 16:15:18', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1146, '127.0.0.1', '2021-05-29 16:15:31', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1147, '127.0.0.1', '2021-05-29 16:15:33', 'siparis-ver', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1148, '127.0.0.1', '2021-05-29 16:15:52', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1149, '127.0.0.1', '2021-05-29 16:16:10', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1150, '127.0.0.1', '2021-05-29 16:16:11', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1151, '127.0.0.1', '2021-05-29 16:19:12', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1152, '127.0.0.1', '2021-05-29 16:19:13', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1153, '127.0.0.1', '2021-05-29 16:19:15', 'siparis-ver', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1154, '127.0.0.1', '2021-05-29 16:21:00', 'siparis-ver', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1155, '127.0.0.1', '2021-05-29 16:21:09', 'siparis-ver', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1156, '127.0.0.1', '2021-05-29 16:21:18', 'siparis-ver', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1157, '127.0.0.1', '2021-05-29 16:21:36', 'siparis-ver', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1158, '127.0.0.1', '2021-05-29 16:21:44', 'siparis-ver', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1159, '127.0.0.1', '2021-05-29 16:21:59', 'siparis-ver', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1160, '127.0.0.1', '2021-05-29 16:22:00', 'siparis-ver', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1161, '127.0.0.1', '2021-05-29 16:22:01', 'siparis-ver', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1162, '127.0.0.1', '2021-05-29 16:22:28', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1163, '127.0.0.1', '2021-05-29 16:23:40', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1164, '127.0.0.1', '2021-05-29 16:23:41', 'siparis-ver', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1165, '127.0.0.1', '2021-05-29 16:24:43', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1166, '127.0.0.1', '2021-05-29 16:25:00', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1167, '127.0.0.1', '2021-05-29 16:25:01', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1168, '127.0.0.1', '2021-05-29 16:25:05', 'hesabim', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1169, '127.0.0.1', '2021-05-29 16:25:08', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1170, '127.0.0.1', '2021-05-29 16:25:09', 'oyun/knight-online', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1171, '127.0.0.1', '2021-05-29 16:25:10', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1172, '127.0.0.1', '2021-05-29 16:25:14', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1173, '127.0.0.1', '2021-05-29 16:28:50', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1174, '127.0.0.1', '2021-05-29 16:28:52', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1175, '127.0.0.1', '2021-05-29 16:29:44', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1176, '127.0.0.1', '2021-05-29 16:29:47', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1177, '127.0.0.1', '2021-05-29 16:31:09', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1178, '127.0.0.1', '2021-05-29 16:31:19', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1179, '127.0.0.1', '2021-05-29 16:33:48', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1180, '127.0.0.1', '2021-05-29 16:33:53', 'oyun/knight-online', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1181, '127.0.0.1', '2021-05-29 16:35:15', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1182, '127.0.0.1', '2021-05-29 16:35:17', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1183, '127.0.0.1', '2021-05-29 16:35:53', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1184, '127.0.0.1', '2021-05-29 16:35:54', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1185, '127.0.0.1', '2021-05-29 16:35:55', 'oyunlar', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1186, '127.0.0.1', '2021-05-29 16:35:57', 'oyun/league-of-legends', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1187, '127.0.0.1', '2021-05-29 16:35:59', 'oyun/league-of-legends/rp-satis', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1188, '127.0.0.1', '2021-05-29 16:36:01', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1189, '127.0.0.1', '2021-05-29 16:36:02', 'oyunlar', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1190, '127.0.0.1', '2021-05-29 16:36:03', 'oyun/gladiatus', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1191, '127.0.0.1', '2021-05-29 16:36:03', 'oyun/gladiatus/gladiatus-yakut', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1192, '127.0.0.1', '2021-05-29 16:36:05', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1193, '127.0.0.1', '2021-05-29 16:36:06', 'oyunlar', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1194, '127.0.0.1', '2021-05-29 16:36:07', 'oyun/rise-online', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1195, '127.0.0.1', '2021-05-29 16:36:08', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1196, '127.0.0.1', '2021-05-29 16:36:10', 'oyunlar', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1197, '127.0.0.1', '2021-05-29 16:36:11', 'oyun/bitefight', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1198, '127.0.0.1', '2021-05-29 16:36:12', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1199, '127.0.0.1', '2021-05-29 16:36:14', 'oyunlar', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1200, '127.0.0.1', '2021-05-29 16:36:15', 'oyun/knight-online', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1201, '127.0.0.1', '2021-05-29 16:37:21', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1202, '127.0.0.1', '2021-05-29 16:37:23', 'oyunlar', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1203, '127.0.0.1', '2021-05-29 16:37:24', 'oyun/knight-online', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1204, '127.0.0.1', '2021-05-29 16:37:27', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1205, '127.0.0.1', '2021-05-29 16:37:49', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1206, '127.0.0.1', '2021-05-29 16:38:10', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1207, '127.0.0.1', '2021-05-29 16:38:16', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1208, '127.0.0.1', '2021-05-29 16:38:32', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1209, '127.0.0.1', '2021-05-29 16:38:41', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1210, '127.0.0.1', '2021-05-29 16:38:43', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1211, '127.0.0.1', '2021-05-29 16:38:44', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1212, '127.0.0.1', '2021-05-29 16:38:45', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1213, '127.0.0.1', '2021-05-29 16:39:05', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1214, '127.0.0.1', '2021-05-29 16:39:11', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1215, '127.0.0.1', '2021-05-29 16:39:21', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1216, '127.0.0.1', '2021-05-29 16:39:34', 'oyunlar', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1217, '127.0.0.1', '2021-05-29 16:39:35', 'oyun/knight-online', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1218, '127.0.0.1', '2021-05-29 16:39:36', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1219, '127.0.0.1', '2021-05-29 16:39:53', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1220, '127.0.0.1', '2021-05-29 16:40:00', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1221, '127.0.0.1', '2021-05-29 16:40:08', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1222, '127.0.0.1', '2021-05-29 16:40:14', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1223, '127.0.0.1', '2021-05-31 11:07:40', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 1),
+(1224, '127.0.0.1', '2021-05-31 11:09:37', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1225, '127.0.0.1', '2021-05-31 11:12:40', 'oyun/knight-online', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1226, '127.0.0.1', '2021-05-31 11:12:41', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1227, '127.0.0.1', '2021-05-31 11:12:46', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1228, '127.0.0.1', '2021-05-31 11:13:13', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1229, '127.0.0.1', '2021-05-31 11:14:10', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1230, '127.0.0.1', '2021-05-31 11:15:58', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1231, '127.0.0.1', '2021-05-31 11:17:20', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1232, '127.0.0.1', '2021-05-31 11:25:09', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1233, '127.0.0.1', '2021-05-31 11:25:16', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1234, '127.0.0.1', '2021-05-31 11:25:45', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1235, '127.0.0.1', '2021-05-31 11:27:15', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1236, '127.0.0.1', '2021-05-31 11:27:21', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1237, '127.0.0.1', '2021-05-31 11:27:23', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1238, '127.0.0.1', '2021-05-31 11:30:38', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1239, '127.0.0.1', '2021-05-31 11:33:11', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1240, '127.0.0.1', '2021-05-31 11:33:13', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1241, '127.0.0.1', '2021-05-31 11:33:14', 'hesabim', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1242, '127.0.0.1', '2021-05-31 11:33:19', 'anasayfa', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1243, '127.0.0.1', '2021-05-31 11:33:22', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1244, '127.0.0.1', '2021-05-31 11:33:24', 'oyun/knight-online', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1245, '127.0.0.1', '2021-05-31 11:33:25', 'oyun/knight-online/steam-knight-online-cuzdan-kodu', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1246, '127.0.0.1', '2021-05-31 11:33:29', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1247, '127.0.0.1', '2021-05-31 11:33:31', 'giris', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1248, '127.0.0.1', '2021-05-31 11:33:33', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1249, '127.0.0.1', '2021-05-31 12:12:20', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1250, '127.0.0.1', '2021-05-31 12:27:50', 'urun-onizle', 'Windows 10', 'Firefox', 'SYSTEM', 0),
+(1251, '127.0.0.1', '2021-05-31 12:27:52', 'bakiye-ekle', 'Windows 10', 'Firefox', 'SYSTEM', 0);
 
 -- --------------------------------------------------------
 
@@ -1357,16 +1644,27 @@ CREATE TABLE IF NOT EXISTS `logins_attempt` (
   `failed` int(11) NOT NULL DEFAULT '0',
   `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 --
 -- Tablo döküm verisi `logins_attempt`
 --
 
 INSERT INTO `logins_attempt` (`id`, `user`, `chanel`, `failed`, `created_at`) VALUES
-(1, 12, 'Windows 10', 1, '2021-05-16 21:38:48'),
-(2, 12, 'Windows 10', 0, '2021-05-16 21:39:17'),
-(3, 12, 'Windows 10', 0, '2021-05-18 15:30:53');
+(6, 2, 'Windows 10', 0, '2021-05-24 18:15:29'),
+(5, 2, 'Windows 10', 0, '2021-05-24 18:14:45'),
+(4, 2, 'Windows 10', 0, '2021-05-24 10:26:53'),
+(7, 2, 'Windows 10', 0, '2021-05-29 12:07:15'),
+(8, 2, 'Windows 10', 0, '2021-05-29 16:25:05'),
+(9, 2, 'Windows 10', 0, '2021-05-29 16:29:50'),
+(10, 2, 'Windows 10', 0, '2021-05-29 16:31:09'),
+(11, 2, 'Windows 10', 0, '2021-05-29 16:38:16'),
+(12, 2, 'Windows 10', 0, '2021-05-29 16:38:32'),
+(13, 2, 'Windows 10', 0, '2021-05-29 16:40:14'),
+(14, 2, 'Windows 10', 0, '2021-05-31 11:25:44'),
+(15, 2, 'Windows 10', 0, '2021-05-31 11:30:38'),
+(16, 2, 'Windows 10', 0, '2021-05-31 11:33:14'),
+(17, 2, 'Windows 10', 0, '2021-05-31 11:33:33');
 
 -- --------------------------------------------------------
 
@@ -1383,7 +1681,7 @@ CREATE TABLE IF NOT EXISTS `logs` (
   `lang` text,
   `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
 --
 -- Tablo döküm verisi `logs`
@@ -1394,7 +1692,32 @@ INSERT INTO `logs` (`id`, `user`, `category`, `text`, `lang`, `created_at`) VALU
 (2, 0, 2, 'Kullanıcı x adlı ürünü satın aldı', 'tr', '2021-03-09 20:59:30'),
 (3, 12, 1, 'Kullanıcıya sisteme ilk kez girdiği için hoşgeldiniz e-postası gönderildi.', 'tr', '2021-05-16 21:39:17'),
 (4, 12, 1, 'Kullanıcı sisteme giriş yaptı.', 'tr', '2021-05-16 21:39:17'),
-(5, 12, 1, 'Kullanıcı sisteme giriş yaptı.', 'tr', '2021-05-18 15:30:53');
+(5, 12, 1, 'Kullanıcı sisteme giriş yaptı.', 'tr', '2021-05-18 15:30:53'),
+(6, 2, 1, 'Kullanıcıya sisteme ilk kez girdiği için hoşgeldiniz e-postası gönderildi.', 'tr', '2021-05-24 10:26:53'),
+(7, 2, 1, 'Kullanıcı sisteme giriş yaptı.', 'tr', '2021-05-24 10:26:53'),
+(8, 2, 1, 'Kullanıcı sistemden güvenli bir şekilde çıkış yaptı.', 'tr', '2021-05-24 18:14:42'),
+(9, 2, 1, 'Kullanıcı sisteme giriş yaptı.', 'tr', '2021-05-24 18:14:45'),
+(10, 2, 1, 'Kullanıcı sistemden güvenli bir şekilde çıkış yaptı.', 'tr', '2021-05-24 18:15:07'),
+(11, 2, 1, 'Kullanıcı sisteme giriş yaptı.', 'tr', '2021-05-24 18:15:29'),
+(12, 2, 1, 'Kullanıcı sisteme giriş yaptı.', 'tr', '2021-05-29 12:07:15'),
+(13, 2, 1, 'Kullanıcı sistemden güvenli bir şekilde çıkış yaptı.', 'tr', '2021-05-29 16:09:25'),
+(14, 2, 1, 'Kullanıcı sisteme giriş yaptı.', 'tr', '2021-05-29 16:25:05'),
+(15, 2, 1, 'Kullanıcı sistemden güvenli bir şekilde çıkış yaptı.', 'tr', '2021-05-29 16:25:07'),
+(16, 2, 1, 'Kullanıcı sisteme giriş yaptı.', 'tr', '2021-05-29 16:29:50'),
+(17, 2, 1, 'Kullanıcı sisteme giriş yaptı.', 'tr', '2021-05-29 16:31:09'),
+(18, 2, 1, 'Kullanıcı sistemden güvenli bir şekilde çıkış yaptı.', 'tr', '2021-05-29 16:31:18'),
+(19, 2, 1, 'Kullanıcı sisteme giriş yaptı.', 'tr', '2021-05-29 16:38:16'),
+(20, 2, 1, 'Kullanıcı sisteme giriş yaptı.', 'tr', '2021-05-29 16:38:32'),
+(21, 2, 1, 'Kullanıcı sistemden güvenli bir şekilde çıkış yaptı.', 'tr', '2021-05-29 16:39:05'),
+(22, 2, 1, 'Kullanıcı sisteme giriş yaptı.', 'tr', '2021-05-29 16:40:14'),
+(23, 2, 1, 'Kullanıcı sisteme giriş yaptı.', 'tr', '2021-05-31 11:25:44'),
+(24, 2, 1, 'Kullanıcı sistemden güvenli bir şekilde çıkış yaptı.', 'tr', '2021-05-31 11:27:21'),
+(25, 2, 1, 'Kullanıcı sisteme giriş yaptı.', 'tr', '2021-05-31 11:30:38'),
+(26, 2, 1, 'Kullanıcı sistemden güvenli bir şekilde çıkış yaptı.', 'tr', '2021-05-31 11:30:43'),
+(27, 2, 1, 'Kullanıcı sistemden güvenli bir şekilde çıkış yaptı.', 'tr', '2021-05-31 11:33:11'),
+(28, 2, 1, 'Kullanıcı sisteme giriş yaptı.', 'tr', '2021-05-31 11:33:14'),
+(29, 2, 1, 'Kullanıcı sistemden güvenli bir şekilde çıkış yaptı.', 'tr', '2021-05-31 11:33:19'),
+(30, 2, 1, 'Kullanıcı sisteme giriş yaptı.', 'tr', '2021-05-31 11:33:33');
 
 -- --------------------------------------------------------
 
@@ -1675,7 +1998,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `address` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `username` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `avatar` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `bakiye` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `bakiye` text,
   `telefon` text,
   `telefon_verified_at` datetime DEFAULT NULL,
   `tcno` int(11) DEFAULT NULL,
@@ -1702,7 +2025,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `slug`, `email`, `address`, `username`, `avatar`, `bakiye`, `telefon`, `telefon_verified_at`, `tcno`, `dogum_tarihi`, `cinsiyet`, `notify_sms`, `notify_email`, `2fa_sms`, `2fa_email`, `email_token`, `email_verified_at`, `password`, `remember_token`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(2, 'Samet Mert ÖZTÜRK', 'feelcode', 'sametmertozturk2@gmail.com', NULL, 'cedkanbiryafes', 'brandicon.png', NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 0, 0, NULL, NULL, '$2y$10$g23sH56Ie6uRrDT3riy5YOlDeCYslqawwwr0WrX1wGUuCfnnhRzim', '7qC6QrodB1LYsUkDZ47nWDzBci7Q6w50L12rCUGcAXnu0VZctfbUxm59BU4c', 1, '2021-02-02 06:17:57', '2021-02-02 06:17:57', NULL);
+(2, 'Samet Mert ÖZTÜRK', 'feelcode', 'sametmertozturk1@gmail.com', NULL, 'cedkanbiryafes', 'brandicon.png', '0', NULL, NULL, NULL, NULL, 0, 0, 0, 0, 0, NULL, '2021-05-24 07:14:24', '$2y$10$g23sH56Ie6uRrDT3riy5YOlDeCYslqawwwr0WrX1wGUuCfnnhRzim', 'eHP2hlrQ09TkjPymy5TUCE5VsoFznGKD5x1sKF92aVllD9MS3muXjWfBMUIa', 1, '2021-02-02 06:17:57', '2021-02-02 06:17:57', NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
