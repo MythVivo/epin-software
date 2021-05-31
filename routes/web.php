@@ -10,6 +10,7 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\OyunController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SayfaController;
+use App\Http\Controllers\SiparisController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\SssController;
 use App\Http\Controllers\SssKategoriController;
@@ -21,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [MainController::class, 'index'])->name('homepage');
+Route::get('/test', function() { return view('front.test'); } );
 
 /*
  * Login - Register İşlemleri
@@ -35,11 +37,18 @@ Route::get('/hesap-onayla/{email}/{key}', [RegisterController::class, 'active'])
 /*
  * Oyunlar
  */
-Route::get('/oyunlar', [MainController::class, 'oyunlar'])->name('oyunlar');
+Route::get('/oyunlar', [MainController::class, 'oyunlar'])->name('oyunlarTum');
 Route::get('/oyun/{oyun}', [MainController::class, 'oyunlar_baslik'])->name('oyun_baslik');
 Route::get('/oyun/{oyun}/{baslik}', [MainController::class, 'baslik_detay'])->name('baslik_detay');
 
 Route::get('/urun-onizle', [MainController::class, 'urun_onizle'])->name('urun_onizle');
+Route::post('/urun-onizle', [MainController::class, 'urun_onizle_post'])->name('urun_onizle_post');
+
+Route::post('/siparis-ver', [SiparisController::class, 'siparis_ver'])->name('siparis_ver');
+
+
+Route::get('/bakiye-ekle', [SiparisController::class, 'bakiye_ekle'])->name('bakiye_ekle');
+
 /*
  * Lang
  */
@@ -94,7 +103,7 @@ Route::prefix('panel')->middleware('auth')->group(function () {
     Route::post('oyun-duzenle', [OyunController::class, 'edit'])->name('oyun_edit');
     Route::get('oyunlar/detay/{title}', [OyunController::class, 'detay'])->name('oyun_detay');
     Route::post('oyun-paket-ekle', [OyunController::class, 'oyun_paket_add'])->name('oyun_paket_add');
-
+    Route::post('oyun-paket-kod-ekle', [OyunController::class, 'oyun_paket_kod_add'])->name('oyun_paket_kod_add');
 });
 
 /*

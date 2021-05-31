@@ -62,9 +62,20 @@
                         <a class="thisPage" href="{{route('giris')}}">Oturum Aç</a>
                         <a href="{{route('kayit')}}">Kayıt Ol</a>
                     </div>
+                    @if(Cookie::get('redirect') !== null)
+                        <div class="alert alert-info" role="alert">
+                            <h4 class="alert-heading">@lang('general.odemeyeDevamEt')</h4>
+                            <p class="mb-0">@lang('general.odemeyeDevamEtAciklama')</p>
+                        </div>
+                    @endif
                     <form method="post">
                         <div class="row">
                             @csrf
+                            @if(Cookie::get('redirect') !== null)
+                                <input type="hidden" name="adet" value="{{Cookie::get('adet')}}">
+                                <input type="hidden" name="package" value="{{Cookie::get('package')}}">
+                                <input type="hidden" name="redirect" value="{{Cookie::get('redirect')}}">
+                            @endif
                             <div class="col-12">
                                 <label><input type="text" name="email">
                                     <a>E-Postamı Unuttum</a>

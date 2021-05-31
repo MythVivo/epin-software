@@ -6,6 +6,7 @@ use App\Models\LoginsAttempt;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Mail;
 
 class LoginController extends Controller
@@ -50,7 +51,12 @@ class LoginController extends Controller
                 }
                 loginsAttempt($user->id, '0');
                 LogCall($user->id, '1', "Kullanıcı sisteme giriş yaptı.");
-                return redirect()->route('hesabim');
+                if(isset($request->redirect)) {
+                    return redirect()->route($request->redirect);
+                } else {
+                    return redirect()->route('hesabim');
+                }
+
             } else {
                 loginsAttempt($user->id, '1');
                 return back()->with('error', __('general.hata-4'))->with('email', $request->email);
@@ -63,6 +69,9 @@ class LoginController extends Controller
     public function logout()
     {
         LogCall(Auth::user()->id, '1', "Kullanıcı sistemden güvenli bir şekilde çıkış yaptı.");
+        if(Cookie::has('redirect')) {
+            Cookie::queue(Cookie::forget('redirect'));
+        }
         Auth::logout();
         return redirect()->route('homepage');
     }

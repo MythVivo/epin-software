@@ -36,4 +36,17 @@ return [
     'sifremiUnuttum' => 'Şifremi Unuttum',
     'satin-al' => 'Satın Al',
     'adet' => 'Adet',
+
+
+    /*
+     * Ürünler
+     */
+    'resim' => 'Ürün Resmi',
+    'adi' => 'Ürün Adı',
+    'fiyat' => 'Ürün Fiyatı',
+    'toplamFiyat' => 'Toplam Fiyat',
+    'siparisOnay' => 'Siparişinizi Onaylıyor Musunuz?',
+    'onayla' => 'Onaylıyorum',
+    'odemeyeDevamEt' => 'Devam Etmek İçin Lütfen Oturum Açın',
+    'odemeyeDevamEtAciklama' => 'Oturum açtıktan sonra otomatik olarak önizleme sayfasına yönlendirileceksiniz.',
 ];
