@@ -21,7 +21,7 @@
     ?>
     <section class="game pt-140">
         <div class="container">
-            <table class="table table-striped table-hover table-bordered text-center">
+            <table class="table table-hover table-bordered text-center item-checkout-table">
                 <thead>
                 <tr class="table-secondary">
                     <th>@lang('general.resim')</th>

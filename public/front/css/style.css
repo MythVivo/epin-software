@@ -1241,3 +1241,42 @@ section.game {}
     box-shadow: none;
     transform: none;
 }
+
+.item-checkout-table img {
+    width: 100px;
+}
+
+.item-checkout-table .table-secondary,
+.item-checkout-table th,
+.item-checkout-table td {
+    background-color: white;
+    color: #000;
+    border-color: #cbccce;
+}
+
+#online-pay .pay-limit-select {
+    display: flex;
+}
+
+#online-pay .pay-limit-select label>input {
+    display: none;
+}
+
+#online-pay .pay-limit-select span {
+    opacity: .5;
+    border-radius: 5px;
+    border: 1px solid #000;
+    padding: 0;
+}
+
+#online-pay .pay-limit-select span input {
+    border: 0;
+}
+
+#online-pay .pay-limit-select input:checked~span {
+    opacity: 1;
+}
+
+#online-pay .pay-limit-select input:checked~span input {
+    display: inline-block;
+}
