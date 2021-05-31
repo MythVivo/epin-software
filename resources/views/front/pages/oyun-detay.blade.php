@@ -3,7 +3,7 @@
 <?php
 $oyun = \App\Models\Games::where('link', $oyun)->first();
 ?>
-<section class="game-item-list pt-140">
+<section class="game-item-list header-margin">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

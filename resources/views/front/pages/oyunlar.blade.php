@@ -1,6 +1,6 @@
 @extends('front.layouts.app')
 @section('body')
-<section class="game pt-140">
+<section class="game header-margin pt-100 pb-100">
     <div class="container">
         <div class="row">
             @foreach(\App\Models\Games::whereNull('deleted_at')->where('status', '1')->get() as $u)

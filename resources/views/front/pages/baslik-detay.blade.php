@@ -7,7 +7,7 @@
 
 
     @if($baslik->type = 2)
-    <section class="game pt-140">
+    <section class="game header-margin pt-100 pb-100">
         <div class="container">
 
             <div class="row">
@@ -17,7 +17,7 @@
                         <figure>
                     <img src="{{asset(env('root').env('front').env('games_titles').$baslik->image)}}">
                     </figure>
-                    <h5 class="heading-secondary">{{$baslik->title}}</h5>
+                    <h5 class="heading-secondary-title">{{$baslik->title}}</h5>
 
                     <p>{!! $baslik->text !!}</p>
                 </div>
