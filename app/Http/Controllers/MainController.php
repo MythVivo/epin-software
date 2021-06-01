@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 
 
 class MainController extends Controller
@@ -34,6 +35,11 @@ class MainController extends Controller
 
     public function urun_onizle_post(Request $request)
     {
-        return view('front.pages.urun-onizle')->with('package', $request->package)->with('adet', $request->adet);
+        $adet = $request->adet;
+        $package = $request->package;
+        setcookie('redirect', 'urun_onizle_post', time() + 60 * 60, '/');
+        setcookie('adet', $adet, time() + 60 * 60, '/');
+        setcookie('package', $package, time() + 60 * 60, '/');
+        return view('front.pages.urun-onizle')->with('redirect', 'urun_onizle_post')->with('adet', $adet)->with('package', $package);
     }
 }

@@ -8,16 +8,16 @@
 @endsection
 @section('body')
     <?php
-    if (Cookie::get('redirect') !== null) {
-        $package = Cookie::get('package');
-        $adet = Cookie::get('adet');
-    }
-    if ($package > 0) {
+        if(isset($_COOKIE['redirect'])) {
+            $package = $_COOKIE['package'];
+            $adet = $_COOKIE['adet'];
+        } else {
+            if(!isset($redirect)) {
+                echo "<meta http-equiv='refresh' content='2;url=". route('homepage') ."' />";
+                die(__('general.yonlendiriliyorsunuz'));
+            }
+        }
         $package = \App\Models\GamesPackages::where('id', $package)->first();
-    } else {
-        $adet = 0;
-        $package = array();
-    }
     ?>
     <section class="game pt-140">
         <div class="container">

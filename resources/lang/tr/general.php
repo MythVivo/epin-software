@@ -16,6 +16,8 @@ return [
     'mesaj-3' => 'Hesabınız başarıyla aktif edildi. Şimdi oturum açabilirsiniz.',
     'mesaj-4' => 'Hoşgeldiniz',
 
+    'yonlendiriliyorsunuz' => 'Yönlendiriliyorsunuz',
+
     /*
      * Anasayfa
      */
