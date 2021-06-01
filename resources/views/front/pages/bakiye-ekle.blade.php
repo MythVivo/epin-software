@@ -8,6 +8,9 @@
 @endsection
 @section('body')
 <?php
+
+use App\Models\GamesPackages;
+
 if (isset($_COOKIE['redirect'])) {
     $package = $_COOKIE['package'];
     $adet = $_COOKIE['adet'];
@@ -17,7 +20,7 @@ if (isset($_COOKIE['redirect'])) {
         die(__('general.yonlendiriliyorsunuz'));
     }
 }
-$package = \App\Models\GamesPackages::where('id', $package)->first();
+$package = GamesPackages::where('id', $package)->first();
 ?>
 <section class="game pt-140">
     <div class="container">
@@ -36,7 +39,8 @@ $package = \App\Models\GamesPackages::where('id', $package)->first();
                             <div class="row">
                                 <div class="pay-title">
                                     <div class="col-title"><h2>Ödeme</h2></div>
-                                    <div class="col-wallet"><i class="fad fa-wallet"></i> Bakiye <span>0</span>TL</div>
+                                    <div class="col-wallet"><i class="fad fa-wallet"></i> Bakiye <span>0</span>TL
+                                    </div>
                                 </div>
                                 <div class="col">
                                     <input type="radio" class="btn-check" name="options-outlined"
@@ -83,7 +87,8 @@ $package = \App\Models\GamesPackages::where('id', $package)->first();
                                             <div class="creditcard">
                                                 <div class="front">
                                                     <div id="ccsingle"></div>
-                                                    <svg version="1.1" id="cardfront" xmlns="http://www.w3.org/2000/svg"
+                                                    <svg version="1.1" id="cardfront"
+                                                         xmlns="http://www.w3.org/2000/svg"
                                                          xmlns:xlink="http://www.w3.org/1999/xlink"
                                                          x="0px" y="0px" viewBox="0 0 750 471"
                                                          style="enable-background:new 0 0 750 471;"
@@ -154,7 +159,8 @@ $package = \App\Models\GamesPackages::where('id', $package)->first();
                 </svg>
                                                 </div>
                                                 <div class="back">
-                                                    <svg version="1.1" id="cardback" xmlns="http://www.w3.org/2000/svg"
+                                                    <svg version="1.1" id="cardback"
+                                                         xmlns="http://www.w3.org/2000/svg"
                                                          xmlns:xlink="http://www.w3.org/1999/xlink"
                                                          x="0px" y="0px" viewBox="0 0 750 471"
                                                          style="enable-background:new 0 0 750 471;"
@@ -165,15 +171,15 @@ $package = \App\Models\GamesPackages::where('id', $package)->first();
                                                         <g id="Back">
                                                             <g id="Page-1_2_">
                                                                 <g id="amex_2_">
-                                                                    <path id="Rectangle-1_2_" class="darkcolor greydark"
-                                                                          d="M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9,40-40,40H40c-22.1,0-40-17.9-40-40V40
-                        C0,17.9,17.9,0,40,0z"/>
+                                                                    <path id="Rectangle-1_2_"
+                                                                          class="darkcolor greydark"
+                                                                          d="M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9,40-40,40H40c-22.1,0-40-17.9-40-40V40C0,17.9,17.9,0,40,0z"/>
                                                                 </g>
                                                             </g>
                                                             <rect y="61.6" class="st2" width="750" height="78"/>
                                                             <g>
-                                                                <path class="st3" d="M701.1,249.1H48.9c-3.3,0-6-2.7-6-6v-52.5c0-3.3,2.7-6,6-6h652.1c3.3,0,6,2.7,6,6v52.5
-                    C707.1,246.4,704.4,249.1,701.1,249.1z"/>
+                                                                <path class="st3"
+                                                                      d="M701.1,249.1H48.9c-3.3,0-6-2.7-6-6v-52.5c0-3.3,2.7-6,6-6h652.1c3.3,0,6,2.7,6,6v52.5C707.1,246.4,704.4,249.1,701.1,249.1z"/>
                                                                 <rect x="42.9" y="198.6" class="st4" width="664.1"
                                                                       height="10.5"/>
                                                                 <rect x="42.9" y="224.5" class="st4" width="664.1"
@@ -208,7 +214,8 @@ $package = \App\Models\GamesPackages::where('id', $package)->first();
                                             </div>
                                             <div class="field-container">
                                                 <label for="cardnumber">Card Number</label><span id="generatecard">generate random</span>
-                                                <input id="cardnumber" type="text" pattern="[0-9]*" inputmode="numeric">
+                                                <input id="cardnumber" type="text" pattern="[0-9]*"
+                                                       inputmode="numeric">
                                                 <svg id="ccicon" class="ccicon" width="750" height="471"
                                                      viewBox="0 0 750 471" version="1.1"
                                                      xmlns="http://www.w3.org/2000/svg"
@@ -244,17 +251,46 @@ $package = \App\Models\GamesPackages::where('id', $package)->first();
                 <div id="pay-eft" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                      data-bs-parent="#online-pay">
                     <div class="accordion-body">
-                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until
-                        the
-                        collapse plugin adds the appropriate classes that we use to style each element. These
-                        classes
-                        control the overall appearance, as well as the showing and hiding via CSS transitions. You
-                        can
-                        modify any of this with custom CSS or overriding our default variables. It's also worth
-                        noting
-                        that just about any HTML can go within the <code>.accordion-body</code>, though the
-                        transition
-                        does limit overflow.
+
+                        <div class="havale-container">
+
+
+                            <div class="custom-bank-select">
+
+                                <div class="selecting-bank">
+
+                                </div>
+                                <div class="accordion" id="accordionPanelsStayOpenExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
+                                                    aria-controls="panelsStayOpen-collapseOne">
+                                                Accordion Item #1
+                                            </button>
+                                        </h2>
+                                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
+                                             aria-labelledby="panelsStayOpen-headingOne">
+                                            <div class="accordion-body">
+                                                <strong>This is the first item's accordion body.</strong> It is shown by
+                                                default, until the collapse plugin adds the appropriate classes that we
+                                                use to style each element. These classes control the overall appearance,
+                                                as well as the showing and hiding via CSS transitions. You can modify
+                                                any of this with custom CSS or overriding our default variables. It's
+                                                also worth noting that just about any HTML can go within the <code>.accordion-body</code>,
+                                                though the transition does limit overflow.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
                     </div>
                 </div>
             </div>
@@ -269,6 +305,7 @@ $package = \App\Models\GamesPackages::where('id', $package)->first();
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js"></script>
 <script src="{{asset(env('root').env('front').env('js').'paycard.js')}}"></script>
+<script src="{{asset(env('root').env('front').env('js').'custom-select.js')}}"></script>
 
 <script>
     $("input[name=tutar]").click(function (e) {
@@ -277,3 +314,33 @@ $package = \App\Models\GamesPackages::where('id', $package)->first();
 </script>
 
 @endsection
+
+
+<div class="bank-list">
+    <article>
+        <div class="bank-card"
+             data-sube="ASDASD"
+             data-iban="TR000001"
+             data-sube-kodu="000000"
+             data-hesap-no="123123123">
+            <span><img src="{{asset('/public/front/bank_logo/ziraat.png')}}"></span>
+        </div>
+        <div class="bank-card" data-sube="ASDASD"
+             data-iban="TR000002"
+             data-sube-kodu="000000"
+             data-hesap-no="123123123">
+            <span><img src="{{asset('/public/front/bank_logo/qnb.png')}}"></span>
+
+        </div>
+        <div class="bank-card" data-sube="ASDASD"
+             data-iban="TR00003"
+             data-sube-kodu="000000"
+             data-hesap-no="123123123">
+            <span><img src="{{asset('/public/front/bank_logo/vakif.png')}}"></span>
+
+        </div>
+
+
+    </article>
+
+</div>

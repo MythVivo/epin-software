@@ -80,10 +80,11 @@
     </div>
 </footer>
 </body>
+<script src="{{asset(env('root').env('front').env('js').'jquery.min.js')}}"></script>
 <script src="{{asset(env('root').env('front').env('js').'bootstrap.bundle.js')}}"></script>
 
 <!-- owlcarousel -->
-<script src="{{asset(env('root').env('front').env('js').'jquery.min.js')}}"></script>
+
 <script src="{{asset(env('root').env('front').env('js').'owlcarousel/owl.carousel.min.js')}}"></script>
 
 <script src="{{asset(env('root').env('front').env('js').'popper.js')}}"></script>

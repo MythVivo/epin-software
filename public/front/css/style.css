@@ -1708,3 +1708,55 @@ input[type=number] {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
+
+.custom-bank-select {}
+
+.custom-bank-select .selecting-bank {
+    display: table;
+}
+
+.custom-bank-select .selecting-bank span:first-child {
+    display: table-cell;
+    vertical-align: middle;
+    padding-right: 2rem;
+}
+
+.custom-bank-select .selecting-bank span {
+    display: block;
+}
+
+.custom-bank-select .selecting-bank span::after {
+    content: '\f0ea';
+    font-family: "Font Awesome 5 Pro";
+    margin-left: 10px;
+}
+
+.custom-bank-select .selecting-bank span:first-child:after {
+    content: unset;
+}
+
+.custom-bank-select .selecting-bank span img {
+    width: 150px;
+}
+
+.custom-bank-select .bank-list {}
+
+.custom-bank-select .bank-list article {}
+
+.custom-bank-select .bank-list article .bank-card {
+    margin: 4px;
+    border: 1px solid #000;
+    display: flex;
+    /* justify-content: unset; */
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.custom-bank-select .bank-list article .bank-card span {
+    display: inline-block;
+}
+
+.custom-bank-select .bank-list article .bank-card span img {
+    width: 150px;
+}
