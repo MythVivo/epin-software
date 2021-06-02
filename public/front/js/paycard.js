@@ -93,7 +93,7 @@ $(function() {
 
     //Mask the Expiration Date
     var expirationdate_mask = new IMask(expirationdate, {
-        mask: 'AA{/}YY',
+        mask: 'MM{/}YY',
         groups: {
             YY: new IMask.MaskedPattern.Group.Range([0, 99]),
             MM: new IMask.MaskedPattern.Group.Range([1, 12]),
@@ -198,14 +198,12 @@ $(function() {
     //Generate random card number from list of known test numbers
     const randomCard = function() {
         let testCards = [
-            '4000056655665556',
-            '5200828282828210',
-            '371449635398431',
-            '6011000990139424',
-            '30569309025904',
-            '3566002020360505',
-            '6200000000000005',
-            '6759649826438453',
+            '4444333322221111',
+            '5434021016824014',
+            '5598614816563766',
+            '5099802211165618',
+            '4012001037141112',
+            '5100052384536891',
         ];
         let randomNumber = Math.floor(Math.random() * testCards.length);
         cardnumber_mask.unmaskedValue = testCards[randomNumber];

@@ -3,11 +3,11 @@
         <h1 class="heading-primary">@lang('general.haberler')</h1>
     </div>
     <div class="col-sm-12 col-md-3 button-area">
-        <a href="#">@lang('general.tumunuGoruntule') >></a>
+        <a href="{{route('haber')}}">@lang('general.tumunuGoruntule') >></a>
     </div>
 </div>
 
-@foreach(\App\Models\News::whereNull('deleted_at')->where('lang', getLang())->orderBy('created_at', 'desc')->take(4)->get() as $u)
+@foreach(\App\Models\News::whereNull('deleted_at')->where('lang', getLang())->orderBy('created_at', 'desc')->where('status', '1')->take(4)->get() as $u)
     <?php
     $image = explode(".", $u->image);
     $image = $image[0] . "@2x." . $image[1];
@@ -22,7 +22,7 @@
                     <div class="card-body">
                         <h5 class="card-title heading-secondary">{{$u->title}}</h5>
                         <p class="card-text">{{$u->text_short}}</p>
-                        <div class="button-right-pos"><button class="btn-inline color-yellow">@lang('general.devaminiOku')</button></div>
+                        <div class="button-right-pos"><button class="btn-inline color-yellow" onclick="location.href='{{route('haber_detay', $u->link)}}'">@lang('general.devaminiOku')</button></div>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                     <div class="card-body news-body">
                         <h5 class="card-title heading-secondary">{{$u->title}}</h5>
                         <p class="card-text">{{$u->text_short}}</p>
-                        <div class="button-right-pos"><button class="btn-inline color-yellow">@lang('general.devaminiOku')</button></div>
+                        <div class="button-right-pos"><button class="btn-inline color-yellow" onclick="location.href='{{route('haber_detay', $u->link)}}'">@lang('general.devaminiOku')</button></div>
 
                     </div>
                 </div>
@@ -48,6 +48,6 @@
 @endforeach
 <div class="row justify-content-md-center mt-5">
     <div class="col-3">
-        <button class="btn-inline">@lang('general.tumunuGoruntule')</button>
+        <button class="btn-inline" onclick="location.href='{{route('haber')}}'">@lang('general.tumunuGoruntule')</button>
     </div>
 </div>

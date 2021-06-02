@@ -24,9 +24,9 @@
                                 <span>{{getSiteName()}}</span>
                             </h2>
                             <ul>
-                                <li><a href="">@lang('general.hakkimizda')</a></li>
+                                <li><a href="{{route('sayfa', 'hakkimizda')}}">@lang('general.hakkimizda')</a></li>
                                 <li><a href="">@lang('general.haberler')</a></li>
-                                <li><a href="">@lang('general.kurumsal')</a></li>
+                                <li><a href="{{route('sayfa', 'kurumsal')}}">@lang('general.kurumsal')</a></li>
                                 <li><a href="">@lang('general.yorumlar')</a></li>
 
                             </ul>
@@ -88,7 +88,6 @@
 <script src="{{asset(env('root').env('front').env('js').'owlcarousel/owl.carousel.min.js')}}"></script>
 
 <script src="{{asset(env('root').env('front').env('js').'popper.js')}}"></script>
-
 <script src="{{asset(env('root').env('front').env('js').'custom.js')}}"></script>
 @yield('js')
 </html>

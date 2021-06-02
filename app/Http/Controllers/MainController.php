@@ -42,4 +42,24 @@ class MainController extends Controller
         setcookie('package', $package, time() + 60 * 60, '/');
         return view('front.pages.urun-onizle')->with('redirect', 'urun_onizle_post')->with('adet', $adet)->with('package', $package);
     }
+
+    public function haberler()
+    {
+        return view('front.pages.haberler');
+    }
+
+    public function haber_detay($haber)
+    {
+        return view('front.pages.haber')->with('haber', $haber);
+    }
+
+    public function yorumlar()
+    {
+        return view('front.pages.yorumlar');
+    }
+
+    public function sayfa($sayfa)
+    {
+        return view('front.pages.sayfa')->with('sayfa', $sayfa);
+    }
 }

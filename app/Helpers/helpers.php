@@ -565,4 +565,9 @@ function loginsAttempt($user, $failed) {
     $attempt->save();
 }
 
+function findBakiye()
+{
+    return Auth::user()->bakiye;
+}
+
 

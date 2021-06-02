@@ -24,6 +24,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [MainController::class, 'index'])->name('homepage');
 Route::get('/test', function() { return view('front.test'); } );
 
+Route::get('/haberler', [MainController::class, 'haberler'])->name('haber');
+Route::get('/haber/{haber}', [MainController::class, 'haber_detay'])->name('haber_detay');
+Route::get('/yorumlar', [MainController::class, 'yorumlar'])->name('yorumlar');
+Route::get('/sayfa/{sayfa}', [MainController::class, 'sayfa'])->name('sayfa');
+
 /*
  * Login - Register İşlemleri
  */
@@ -48,6 +53,8 @@ Route::post('/siparis-ver', [SiparisController::class, 'siparis_ver'])->name('si
 
 
 Route::get('/bakiye-ekle', [SiparisController::class, 'bakiye_ekle'])->name('bakiye_ekle');
+
+Route::post('/odeme-yap', [SiparisController::class, 'odeme_yap'])->name('odeme_yap');
 
 /*
  * Lang
