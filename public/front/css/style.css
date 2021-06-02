@@ -1765,14 +1765,26 @@ input[type=number] {
 }
 
 .custom-bank-select .selecting-bank p {
-    display: block;
+    display: flex;
     margin-bottom: 4px;
 }
 
-.custom-bank-select .selecting-bank p>input {
+.custom-bank-select .selecting-bank p>input,
+.custom-bank-select .selecting-bank p>span {
     display: inline-block;
     border: 0;
     outline: none;
+    margin-left: 10px;
+    padding: 0;
+}
+
+.custom-bank-select .selecting-bank p>span {
+    flex: auto;
+    margin-right: 10px;
+}
+
+.custom-bank-select .selecting-bank p>input {
+    margin-left: 10px;
 }
 
 .custom-bank-select .selecting-bank p>input:focus {

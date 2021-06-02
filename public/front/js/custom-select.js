@@ -9,7 +9,7 @@ $(function() {
     $.each(selectfirst[0].dataset, function(key, value) {
         let valRex = value.replace(/[\[|\]|\']/g, '');
         let splits = valRex.split(',')
-        selecting2.append("<p>" + splits[0] + ":<input type='text' readonly value='" + splits[1] + "'><i></i></p>")
+        selecting2.append("<p><span>" + splits[0] + "</span>:<input type='text' readonly value='" + splits[1] + "'><i></i></p>")
     });
 
     $(".bank-card").on("click", function(event) {
@@ -19,7 +19,7 @@ $(function() {
 
             let valRex = value.replace(/[\[|\]|\']/g, '');
             let splits = valRex.split(',')
-            selecting2.append("<p>" + splits[0] + ":<input type='text' readonly value='" + splits[1] + "'><i></i></p>")
+            selecting2.append("<p><span>" + splits[0] + "</span>:<input type='text' readonly value='" + splits[1] + "'><i></i></p>")
         });
 
     });
@@ -33,7 +33,7 @@ $(function() {
 
     $("body").delegate(".selecting-container p i", "click", function(e) {
 
-        var copyText = e.target.parentElement.children[0]
+        var copyText = e.target.parentElement.children[1]
 
         copyText.select();
 
