@@ -1088,6 +1088,19 @@ section.game {}
 
 .game-card .game-card-description {
     padding: 0 0;
+    position: relative;
+}
+
+.game-card .game-card-description .date {
+    position: absolute;
+    left: 0px;
+    border-radius: 0px 20px 0px 0px;
+    background-color: #80f1b1;
+    color: #24265b;
+    top: -50px;
+    padding: 5px 10px 27px 10px;
+    font-size: 12px;
+    font-weight: 500;
 }
 
 .game-card .game-card-description .title-button {
@@ -1894,3 +1907,56 @@ input[type=number] {
 }
 
 .siparis-table .table-val span {}
+
+.game-news-page .heading-primary {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 27px;
+    color: #24265b;
+    transform: translateY(calc(50% - 10px));
+    background-color: #fff;
+    border-radius: 40px 40px 0px 40px;
+    padding: 20px 20px;
+    display: inline-block;
+    position: absolute;
+    left: 20px;
+    bottom: 0;
+}
+
+.game-news-page .heading-secondary {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #80F1B1;
+}
+
+.game-news-page .heading-secondary-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #343891;
+}
+
+.game-news-page figure {
+    position: relative;
+    margin: 0;
+}
+
+.game-news-page figure img {
+    border-bottom: 20px solid #65b497;
+    border-radius: 0px 0 0 65px;
+    width: 100%;
+}
+
+.game-news-page article {
+    margin-top: 40px;
+}
+
+.game-news-page .news-in-date {
+    position: absolute;
+    top: -1px;
+    left: 20px;
+    border-radius: 0px 0px 20px 20px;
+    padding: 10px 30px;
+    background-color: white;
+}
