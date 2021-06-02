@@ -1,6 +1,6 @@
 @extends('front.layouts.app')
 @section('body')
-<section class="game-news-page header-margin pt-100 pb-100">
+<section class="game-news-page header-margin bg-grey pt-100 pb-100">
     <div class="container">
         <div class="row">
             <?php
@@ -10,17 +10,19 @@
             ?>
 
             <div class="col-md-8">
-                <figure>
-                    <span class="news-in-date">1 Ay Önce</span>
-                    <img src="{{asset(env('root').env('front').env('news').$image)}}" alt="{{$u->title}}">
-                    <h1 class="heading-primary"> {{$u->title}}</h1>
-                </figure>
-                <article>
+                <div class="page-wrapper">
+                    <figure>
+                        <span class="news-in-date">1 Ay Önce</span>
+                        <img src="{{asset(env('root').env('front').env('news').$image)}}" alt="{{$u->title}}">
+                        <h1 class="heading-primary"> {{$u->title}}</h1>
+                    </figure>
+                    <article>
 
-                    <h4 class="short-text"> {{$u->text_short}}</h4>
-                    <hr>
-                    {{$u->text}}
-                </article>
+                        <h4 class="short-text"> {{$u->text_short}}</h4>
+                        <hr>
+                        {{$u->text}}
+                    </article>
+                </div>
             </div>
         </div>
     </div>

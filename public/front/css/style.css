@@ -29,19 +29,8 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-a[titlex] {
-    position: relative;
-}
-
-a[titlex]:hover::after {
-    content: attr(titlex);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #343891;
-    color: #fff;
-    padding: 5px;
-    border-radius: 5px;
+.bg-grey {
+    background-color: #EBEBEB;
 }
 
 
@@ -1820,6 +1809,7 @@ input[type=number] {
 .custom-bank-select .selecting-bank .bank-info .clipboard i:nth-child(1)::after {
     content: "\f0c5";
     font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
     transition: all ease-in-out .2s;
     transform: scale(1);
     opacity: 1;
@@ -1829,6 +1819,7 @@ input[type=number] {
     content: "\f46c";
     color: #82c91e;
     font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
     transition: all ease-in-out .2s;
     transform: scale(0);
     opacity: 0;
@@ -1943,11 +1934,19 @@ input[type=number] {
     transform: translateY(calc(50% - 10px));
     background-color: #fff;
     border-radius: 40px 40px 0px 40px;
-    padding: 20px 20px;
+    padding: 20px 40px;
     display: inline-block;
     position: absolute;
     left: 20px;
     bottom: 0;
+}
+
+.game-news-page .page-wrapper {
+    background-color: white;
+    padding: 0 0;
+    box-shadow: 0 0 20px -17px black;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .game-news-page article h4 {
@@ -1971,6 +1970,7 @@ input[type=number] {
     margin-top: 40px;
     font-family: 'BrandonGrotesque';
     font-size: 16px;
+    padding: 0 20px 40px;
 }
 
 .game-news-page article hr {
