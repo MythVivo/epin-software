@@ -1923,17 +1923,9 @@ input[type=number] {
     bottom: 0;
 }
 
-.game-news-page .heading-secondary {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 24px;
-    color: #80F1B1;
-}
-
-.game-news-page .heading-secondary-title {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 24px;
+.game-news-page article h4 {
+    font-family: 'BrandonGrotesque';
+    font-size: 20px;
     color: #343891;
 }
 
@@ -1950,6 +1942,13 @@ input[type=number] {
 
 .game-news-page article {
     margin-top: 40px;
+    font-family: 'BrandonGrotesque';
+    font-size: 16px;
+}
+
+.game-news-page article hr {
+    height: 2px;
+    background-color: #65b497;
 }
 
 .game-news-page .news-in-date {
