@@ -62,7 +62,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex justify-content-center" titlex="giriş"
+                    <a class="nav-link d-flex justify-content-center"
                        href="@if(isset(Auth::user()->id)) {{route('hesabim')}} @else {{route('giris')}} @endif">
                         <i class="fas fa-user align-self-center"></i>
                     </a>
