@@ -9,7 +9,7 @@ $(function() {
     $.each(selectfirst[0].dataset, function(key, value) {
         let valRex = value.replace(/[\[|\]|\']/g, '');
         let splits = valRex.split(',')
-        selecting2.append("<p><span>" + splits[0] + "</span>:<input type='text' readonly value='" + splits[1] + "'><i></i></p>")
+        selecting2.append("<div class='bank-info'><span>" + splits[0] + "</span>:<input type='text' readonly value='" + splits[1] + "'><div class='clipboard'><i></i><i></i></div></div>")
     });
 
     $(".bank-card").on("click", function(event) {
@@ -19,7 +19,7 @@ $(function() {
 
             let valRex = value.replace(/[\[|\]|\']/g, '');
             let splits = valRex.split(',')
-            selecting2.append("<p><span>" + splits[0] + "</span>:<input type='text' readonly value='" + splits[1] + "'><i></i></p>")
+            selecting2.append("<div class='bank-info'><span>" + splits[0] + "</span>:<input type='text' readonly value='" + splits[1] + "'><div class='clipboard'><i></i><i></i></div></div>")
         });
 
     });
@@ -31,13 +31,26 @@ $(function() {
 
     });
 
-    $("body").delegate(".selecting-container p i", "click", function(e) {
+    function clip(a) {
+        setTimeout(function() { $(a).removeClass("copy") }, 1000);
+    }
 
-        var copyText = e.target.parentElement.children[1]
+    $("body").delegate(".selecting-container .clipboard", "click", function(e) {
 
-        copyText.select();
+        var copyText = this.parentElement.children[1]
 
-        document.execCommand("copy");
+
+        if ($(this).hasClass("copy")) {
+            return false
+        } else {
+            $(this).addClass("copy")
+            copyText.select();
+            document.execCommand("copy");
+            clip(this)
+
+        }
+
+
     });
 
     $(".list-select-button").click(function() {

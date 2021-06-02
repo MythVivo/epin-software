@@ -1781,13 +1781,13 @@ input[type=number] {
     padding-right: 2rem;
 }
 
-.custom-bank-select .selecting-bank p {
+.custom-bank-select .selecting-bank .bank-info {
     display: flex;
     margin-bottom: 4px;
 }
 
-.custom-bank-select .selecting-bank p>input,
-.custom-bank-select .selecting-bank p>span {
+.custom-bank-select .selecting-bank .bank-info>input,
+.custom-bank-select .selecting-bank .bank-info>span {
     display: inline-block;
     border: 0;
     outline: none;
@@ -1795,30 +1795,53 @@ input[type=number] {
     padding: 0;
 }
 
-.custom-bank-select .selecting-bank p>span {
+.custom-bank-select .selecting-bank .bank-info>span {
     flex: auto;
     margin-right: 10px;
 }
 
-.custom-bank-select .selecting-bank p>input {
+.custom-bank-select .selecting-bank .bank-info>input {
     margin-left: 10px;
 }
 
-.custom-bank-select .selecting-bank p>input:focus {
+.custom-bank-select .selecting-bank .bank-info>input:focus {
     border: 0;
     box-shadow: none;
     outline: none;
 }
 
-.custom-bank-select .selecting-bank p i {
+.custom-bank-select .selecting-bank .bank-info .clipboard i {
     display: inline-block;
     font-style: normal;
     margin-left: 8px;
+    position: absolute;
 }
 
-.custom-bank-select .selecting-bank p i::after {
+.custom-bank-select .selecting-bank .bank-info .clipboard i:nth-child(1)::after {
     content: "\f0c5";
     font-family: "Font Awesome 5 Pro";
+    transition: all ease-in-out .2s;
+    transform: scale(1);
+    opacity: 1;
+}
+
+.custom-bank-select .selecting-bank .bank-info .clipboard i:nth-child(2)::after {
+    content: "\f46c";
+    color: #82c91e;
+    font-family: "Font Awesome 5 Pro";
+    transition: all ease-in-out .2s;
+    transform: scale(0);
+    opacity: 0;
+}
+
+.custom-bank-select .selecting-bank .bank-info .clipboard.copy i:nth-child(1)::after {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.custom-bank-select .selecting-bank .bank-info .clipboard.copy i:nth-child(2)::after {
+    transform: scale(1);
+    opacity: 1;
 }
 
 .custom-bank-select .selecting-bank span img {
