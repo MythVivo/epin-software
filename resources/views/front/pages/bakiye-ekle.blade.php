@@ -24,15 +24,15 @@ $package = GamesPackages::where('id', $package)->first();
 ?>
 <section class="game pt-140">
     <div class="container">
-        <div class="accordion" id="online-pay">
+        <div class="accordion mt-100 mb-100" id="online-pay">
             <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
+                <h2 class="accordion-header" id="pay-online">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#pay-online" aria-expanded="true" aria-controls="pay-online">
+                            data-bs-target="#pay-online-col" aria-expanded="true" aria-controls="pay-online-col">
                         Online Ödeme
                     </button>
                 </h2>
-                <div id="pay-online" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                <div id="pay-online-col" class="accordion-collapse collapse show" aria-labelledby="pay-online"
                      data-bs-parent="#online-pay">
                     <div class="accordion-body">
                         <form>
@@ -109,15 +109,16 @@ $package = GamesPackages::where('id', $package)->first();
                         </text>
                         <text transform="matrix(1 0 0 1 54.1064 428.1723)" id="svgname" class="st2 st5 st6">Ad Soyad
                         </text>
-                        <text transform="matrix(1 0 0 1 54.1074 389.8793)" class="st7 st5 st8">cardholder name</text>
-                        <text transform="matrix(1 0 0 1 479.7754 388.8793)" class="st7 st5 st8">expiration</text>
-                        <text transform="matrix(1 0 0 1 65.1054 241.5)" class="st7 st5 st8">card number</text>
+                        <text transform="matrix(1 0 0 1 54.1074 389.8793)" class="st7 st5 st8">Kart Sahibi</text>
+                        <text transform="matrix(1 0 0 1 479.7754 388.8793)" class="st7 st5 st8">Son Kullanma tarihi
+                        </text>
+                        <text transform="matrix(1 0 0 1 65.1054 241.5)" class="st7 st5 st8">Kart Numarası</text>
                         <g>
                             <text transform="matrix(1 0 0 1 574.4219 433.8095)" id="svgexpire" class="st2 st5 st9">
                                 01/23
                             </text>
-                            <text transform="matrix(1 0 0 1 479.3848 417.0097)" class="st2 st10 st11">VALID</text>
-                            <text transform="matrix(1 0 0 1 479.3848 435.6762)" class="st2 st10 st11">THRU</text>
+                            <text transform="matrix(1 0 0 1 479.3848 417.0097)" class="st2 st10 st11">S. K.</text>
+                            <text transform="matrix(1 0 0 1 479.3848 435.6762)" class="st2 st10 st11">T.</text>
                             <polygon class="st2" points="554.5,421 540.4,414.2 540.4,427.9 		"/>
                         </g>
                         <g id="cchip">
@@ -192,7 +193,7 @@ $package = GamesPackages::where('id', $package)->first();
                                                             </text>
                                                             <g class="st8">
                                                                 <text transform="matrix(1 0 0 1 518.083 280.0879)"
-                                                                      class="st9 st6 st10">security code
+                                                                      class="st9 st6 st10">CVV
                                                                 </text>
                                                             </g>
                                                             <rect x="58.1" y="378.6" class="st11" width="375.5"
@@ -200,7 +201,7 @@ $package = GamesPackages::where('id', $package)->first();
                                                             <rect x="58.1" y="405.6" class="st11" width="421.7"
                                                                   height="13.5"/>
                                                             <text transform="matrix(1 0 0 1 59.5073 228.6099)"
-                                                                  id="svgnameback" class="st12 st13">John Doe
+                                                                  id="svgnameback" class="st12 st13">Ad Soyad
                                                             </text>
                                                         </g>
                 </svg>
@@ -209,11 +210,11 @@ $package = GamesPackages::where('id', $package)->first();
                                         </div>
                                         <div class="form-container">
                                             <div class="field-container">
-                                                <label for="name">Name</label>
+                                                <label for="name">Adı Soyadı</label>
                                                 <input id="name" maxlength="20" type="text">
                                             </div>
                                             <div class="field-container">
-                                                <label for="cardnumber">Card Number</label><span id="generatecard">generate random</span>
+                                                <label for="cardnumber">Kart Numarası</label><span id="generatecard">generate random</span>
                                                 <input id="cardnumber" type="text" pattern="[0-9]*"
                                                        inputmode="numeric">
                                                 <svg id="ccicon" class="ccicon" width="750" height="471"
@@ -224,12 +225,12 @@ $package = GamesPackages::where('id', $package)->first();
                                                 </svg>
                                             </div>
                                             <div class="field-container">
-                                                <label for="expirationdate">Expiration (mm/yy)</label>
+                                                <label for="expirationdate">Geçerlilik Tarihi (aa/yy)</label>
                                                 <input id="expirationdate" type="text" pattern="[0-9]*"
                                                        inputmode="numeric">
                                             </div>
                                             <div class="field-container">
-                                                <label for="securitycode">Security Code</label>
+                                                <label for="securitycode">CVV</label>
                                                 <input id="securitycode" type="text" pattern="[0-9]*"
                                                        inputmode="numeric">
                                             </div>
@@ -244,11 +245,11 @@ $package = GamesPackages::where('id', $package)->first();
             <div class="accordion-item">
                 <h2 class="accordion-header" id="pay-eft">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#pay-eft" aria-expanded="false" aria-controls="pay-eft">
+                            data-bs-target="#pay-eft-col" aria-expanded="true" aria-controls="pay-eft-col">
                         EFT/Havale
                     </button>
                 </h2>
-                <div id="pay-eft" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                <div id="pay-eft-col" class="accordion-collapse collapse" aria-labelledby="pay-eft"
                      data-bs-parent="#online-pay">
                     <div class="accordion-body">
 
@@ -258,30 +259,38 @@ $package = GamesPackages::where('id', $package)->first();
                             <div class="custom-bank-select">
 
                                 <div class="selecting-bank">
-
+                                    <div class="selecting-container"></div>
+                                    <div class="list-select-button"><i class="fas fa-chevron-down"></i></div>
                                 </div>
-                                <div class="accordion" id="accordionPanelsStayOpenExample">
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
-                                                    aria-controls="panelsStayOpen-collapseOne">
-                                                Accordion Item #1
-                                            </button>
-                                        </h2>
-                                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
-                                             aria-labelledby="panelsStayOpen-headingOne">
-                                            <div class="accordion-body">
-                                                <strong>This is the first item's accordion body.</strong> It is shown by
-                                                default, until the collapse plugin adds the appropriate classes that we
-                                                use to style each element. These classes control the overall appearance,
-                                                as well as the showing and hiding via CSS transitions. You can modify
-                                                any of this with custom CSS or overriding our default variables. It's
-                                                also worth noting that just about any HTML can go within the <code>.accordion-body</code>,
-                                                though the transition does limit overflow.
-                                            </div>
+                                <div class="bank-list">
+                                    <article>
+                                        <div class="bank-card"
+                                             data-sube="['Şube','Sakarya']"
+                                             data-iban="['İban Numarası','TR=0000']"
+                                             data-sube-kodu="['aaa','AAA']"
+                                             data-hesap-no="['aaa','AAA']">
+                                            <span><img src="{{asset('/public/front/bank_logo/ziraat.png')}}"></span>
                                         </div>
-                                    </div>
+                                        <div class="bank-card"
+                                             data-sube="['aaa','AAA']"
+                                             data-iban="['aaa','AAA']"
+                                             data-sube-kodu="['aaa','AAA']"
+                                             data-hesap-no="['aaa','AAA']">
+                                            <span><img src="{{asset('/public/front/bank_logo/qnb.png')}}"></span>
+
+                                        </div>
+                                        <div class="bank-card"
+                                             data-sube="['aaa','AAA']"
+                                             data-iban="['aaa','AAA']"
+                                             data-sube-kodu="['aaa','AAA']"
+                                             data-hesap-no="['aaa','AAA']">
+                                            <span><img src="{{asset('/public/front/bank_logo/vakif.png')}}"></span>
+
+                                        </div>
+
+
+                                    </article>
+
                                 </div>
 
 
@@ -316,31 +325,3 @@ $package = GamesPackages::where('id', $package)->first();
 @endsection
 
 
-<div class="bank-list">
-    <article>
-        <div class="bank-card"
-             data-sube="ASDASD"
-             data-iban="TR000001"
-             data-sube-kodu="000000"
-             data-hesap-no="123123123">
-            <span><img src="{{asset('/public/front/bank_logo/ziraat.png')}}"></span>
-        </div>
-        <div class="bank-card" data-sube="ASDASD"
-             data-iban="TR000002"
-             data-sube-kodu="000000"
-             data-hesap-no="123123123">
-            <span><img src="{{asset('/public/front/bank_logo/qnb.png')}}"></span>
-
-        </div>
-        <div class="bank-card" data-sube="ASDASD"
-             data-iban="TR00003"
-             data-sube-kodu="000000"
-             data-hesap-no="123123123">
-            <span><img src="{{asset('/public/front/bank_logo/vakif.png')}}"></span>
-
-        </div>
-
-
-    </article>
-
-</div>
