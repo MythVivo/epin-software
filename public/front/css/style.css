@@ -1842,6 +1842,7 @@ input[type=number] {
     display: table;
     border-collapse: collapse;
     box-shadow: 0 0 0 5px #e3e3e3;
+    width: 100%;
 }
 
 .siparis-table img {
