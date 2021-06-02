@@ -430,6 +430,10 @@ p {
     color: #343891;
 }
 
+.site-header-area.main-page {
+    background-color: transparent;
+}
+
 .site-header-area {
     position: fixed;
     z-index: 2;
@@ -441,7 +445,7 @@ p {
 }
 
 .sticky-header {
-    background: #24265B;
+    background: #24265B !important;
     position: fixed;
     z-index: 9999;
     top: -100%;
@@ -1935,7 +1939,7 @@ input[type=number] {
 }
 
 .game-news-page figure img {
-    border-bottom: 20px solid #65b497;
+    border-bottom: 20px solid #80F1B1;
     border-radius: 0px 0 0 65px;
     width: 100%;
 }
@@ -1947,8 +1951,9 @@ input[type=number] {
 }
 
 .game-news-page article hr {
-    height: 2px;
-    background-color: #65b497;
+    height: 1px;
+    background-color: #80f1b1;
+    opacity: 1;
 }
 
 .game-news-page .news-in-date {
