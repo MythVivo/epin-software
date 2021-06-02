@@ -1833,3 +1833,51 @@ input[type=number] {
 .custom-bank-select .bank-list article .bank-card span img {
     width: 150px;
 }
+
+.nav-aside .nav-pills .nav-link {
+    text-align: left;
+}
+
+.siparis-table {
+    display: table;
+    border-collapse: collapse;
+    box-shadow: 0 0 0 5px #e3e3e3;
+}
+
+.siparis-table img {
+    width: 100px;
+}
+
+.siparis-table .table-title,
+.siparis-table .table-val {
+    display: table-row;
+    transition: all ease-in-out .2s;
+}
+
+.siparis-table .table-title {
+    background-color: #24265b;
+}
+
+.siparis-table .table-title span,
+.siparis-table .table-val span {
+    display: table-cell;
+    border: 1px solid #ddd;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+.siparis-table .table-val:nth-child(2n+1) {
+    background-color: #F4F4F4;
+}
+
+.siparis-table .table-val:hover {
+    background-color: #e1fcf2;
+}
+
+.siparis-table .table-title span {
+    color: white;
+    border: none;
+    background-color: #24265b;
+}
+
+.siparis-table .table-val span {}
