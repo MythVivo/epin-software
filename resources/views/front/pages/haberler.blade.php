@@ -14,7 +14,7 @@
             <div class="col-md-6 col-lg-4">
                 <div class="game-card">
                     <figure>
-                        <img src="{{asset(env('root').env('front').env('news').$image)}}" alt="{{$u->title}}">
+                        <img src="{{asset(env('ROOT').env('FRONT').env('NEWS').$image)}}" alt="{{$u->title}}">
                     </figure>
 
                     <div class="game-card-description">

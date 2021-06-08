@@ -5,17 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>{{getPageTitle(getPage(), getLang())}} | {{getSiteName()}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{{asset(env('root').env('front').env('css').'bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{asset(env('root').env('front').env('css').'style.css')}}" rel="stylesheet">
+    <link href="{{asset(env('ROOT').env('FRONT').env('CSS').'bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset(env('ROOT').env('FRONT').env('CSS').'style.css')}}" rel="stylesheet">
 
     <!-- owl carousel -->
     <link rel="stylesheet"
-          href="{{asset(env('root').env('front').env('js').'owlcarousel/assets/owl.carousel.min.css')}}">
+          href="{{asset(env('ROOT').env('FRONT').env('JS').'owlcarousel/assets/owl.carousel.min.css')}}">
     <link rel="stylesheet"
-          href="{{asset(env('root').env('front').env('js').'owlcarousel/assets/owl.theme.default.min.css')}}">
+          href="{{asset(env('ROOT').env('FRONT').env('JS').'owlcarousel/assets/owl.theme.default.min.css')}}">
 
     <!-- font awesome -->
-    <link rel="stylesheet" href="{{asset(env('root').env('front').env('vendors').'fontawesome/css/all.css')}}">
+    <link rel="stylesheet" href="{{asset(env('ROOT').env('FRONT').env('VENDORS').'fontawesome/css/all.css')}}">
 
     @yield('css')
 </head>
@@ -25,7 +25,7 @@
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
             <a href="{{route('homepage')}}"
                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none site-logo">
-                <img src="{{asset(env('root').env('brand').'brandlogo.png')}}">
+                <img src="{{asset(env('ROOT').env('BRAND').'brandlogo.png')}}">
             </a>
             <ul class="nav nav-pills">
                 <li class="nav-item"><i class="far fa-search"></i></li>

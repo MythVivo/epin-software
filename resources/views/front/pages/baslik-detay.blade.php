@@ -15,7 +15,7 @@
                 <div class="col-4">
                     <div class="game-info-col">
                         <figure>
-                    <img src="{{asset(env('root').env('front').env('games_titles').$baslik->image)}}">
+                    <img src="{{asset(env('ROOT').env('FRONT').env('GAMES_TITLES').$baslik->image)}}">
                     </figure>
                     <h5 class="heading-secondary-title">{{$baslik->title}}</h5>
 
@@ -26,7 +26,7 @@
                     <div class="items-collection-wrapper">
                     @foreach(\App\Models\GamesPackages::where('games_titles', $baslik->id)->get() as $u)
                     <article class="item-col-wrapper">
-                        <figure><img src="{{asset(env('root').env('front').env('games_packages').$u->image)}}"></figure>
+                        <figure><img src="{{asset(env('ROOT').env('FRONT').env('GAMES_PACKAGES').$u->image)}}"></figure>
                         <div class="item-col-center">
                         <h5 class="heading-secondary">{{$u->title}}</h5>
                         <h6>{!! $u->text !!}</h6>

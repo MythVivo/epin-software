@@ -8,7 +8,7 @@
         @foreach(\App\Models\Slider::whereNull('deleted_at')->get() as $u)
         <div class="carousel-item  @if ($loop->first) active @endif">
             <div class="overlay"></div>
-            <img src="{{asset(env('root').env('front').env('slider').$u->image)}}" class="d-block w-100" alt="{{$u->title}}">
+            <img src="{{asset(env('ROOT').env('FRONT').env('SLIDER').$u->image)}}" class="d-block w-100" alt="{{$u->title}}">
         </div>
         @endforeach
     </div>

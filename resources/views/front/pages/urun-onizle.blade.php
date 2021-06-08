@@ -35,7 +35,7 @@
                 <tr>
                     <td class="w-25">
                         <img class="img-fluid img-thumbnail"
-                             src="{{asset(env('root').env('front').env('games_packages').$package->image)}}">
+                             src="{{asset(env('ROOT').env('FRONT').env('GAMES_PACKAGES').$package->image)}}">
                     </td>
                     <td>{{$package->title}}</td>
                     <td>{{$adet}}</td>

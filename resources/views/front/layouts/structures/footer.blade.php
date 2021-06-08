@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="footer-top-left col-sm-6">
                     <div class="col-sm-12 col-md-6">
-                        <img class="brand-logo" src="{{asset(env('root').env('brand').'brandlogo.png')}}">
+                        <img class="brand-logo" src="{{asset(env('ROOT').env('BRAND').'brandlogo.png')}}">
                     </div>
                     <p class="copyright-text">&copy; <?=date('Y')?> Tüm Hakları Saklıdır.</p>
                     <ul class=social-links>
@@ -80,14 +80,14 @@
     </div>
 </footer>
 </body>
-<script src="{{asset(env('root').env('front').env('js').'jquery.min.js')}}"></script>
-<script src="{{asset(env('root').env('front').env('js').'bootstrap.bundle.js')}}"></script>
+<script src="{{asset(env('ROOT').env('FRONT').env('JS').'jquery.min.js')}}"></script>
+<script src="{{asset(env('ROOT').env('FRONT').env('JS').'bootstrap.bundle.js')}}"></script>
 
 <!-- owlcarousel -->
 
-<script src="{{asset(env('root').env('front').env('js').'owlcarousel/owl.carousel.min.js')}}"></script>
+<script src="{{asset(env('ROOT').env('FRONT').env('JS').'owlcarousel/owl.carousel.min.js')}}"></script>
 
-<script src="{{asset(env('root').env('front').env('js').'popper.js')}}"></script>
-<script src="{{asset(env('root').env('front').env('js').'custom.js')}}"></script>
+<script src="{{asset(env('ROOT').env('FRONT').env('JS').'popper.js')}}"></script>
+<script src="{{asset(env('ROOT').env('FRONT').env('JS').'custom.js')}}"></script>
 @yield('js')
 </html>

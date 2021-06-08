@@ -198,12 +198,9 @@ $(function() {
     //Generate random card number from list of known test numbers
     const randomCard = function() {
         let testCards = [
-            '4444333322221111',
-            '5434021016824014',
-            '5598614816563766',
-            '5099802211165618',
-            '4012001037141112',
-            '5100052384536891',
+            '9792030394440796',
+            '4355084355084358',
+            '5406675406675403',
         ];
         let randomNumber = Math.floor(Math.random() * testCards.length);
         cardnumber_mask.unmaskedValue = testCards[randomNumber];

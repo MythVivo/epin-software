@@ -13,7 +13,7 @@ $oyun = \App\Models\Games::where('link', $oyun)->first();
                         $oyun->id)->get() as $u)
                         <div class="col-md-3">
                             <figure onclick="location.href='{{route('baslik_detay', [$oyun->link, $u->link])}}'">
-                                <img src="{{asset(env('root').env('front').env('games_titles').$u->image)}}">
+                                <img src="{{asset(env('ROOT').env('FRONT').env('GAMES_TITLES').$u->image)}}">
                                 <a href="{{route('baslik_detay', [$oyun->link, $u->link])}}"> {{$u->title}} </a>
                                 <p>{!! Str::limit(strip_tags($u->text), $limit = 100, $end = '...') !!}</p>
                             </figure>

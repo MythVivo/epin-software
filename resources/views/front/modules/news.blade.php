@@ -16,7 +16,7 @@
         <div class="card h2x mb-100">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{{asset(env('root').env('front').env('news').$image)}}" alt="{{$u->title}}">
+                    <img src="{{asset(env('ROOT').env('FRONT').env('NEWS').$image)}}" alt="{{$u->title}}">
                 </div>
                 <div class="col-md-6">
                     <div class="card-body">
@@ -31,7 +31,7 @@
         <div class="card h1x mb-30">
             <div class="row">
                 <div class="col-md-4">
-                    <img src="{{asset(env('root').env('front').env('news').$image)}}" alt="{{$u->title}}">
+                    <img src="{{asset(env('ROOT').env('FRONT').env('NEWS').$image)}}" alt="{{$u->title}}">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body news-body">

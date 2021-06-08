@@ -14,7 +14,7 @@
 <div class="owl-carousel">
     @foreach(\App\Models\Games::whereNull('deleted_at')->where('lang', getLang())->get() as $u)
         <div class="card">
-            <img src="{{asset(env('root').env('front').env('games').$u->image)}}" class="card-img" alt="{{$u->title}}">
+            <img src="{{asset(env('ROOT').env('FRONT').env('GAMES').$u->image)}}" class="card-img" alt="{{$u->title}}">
                 <h5 class="card-title text-center">{{$u->title}}</h5>
         </div>
     @endforeach

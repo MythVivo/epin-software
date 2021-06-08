@@ -5,10 +5,10 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>{{getPageTitle(getPage(), getLang())}} | {{getSiteName()}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{{asset(env('root').env('front').env('css').'bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{asset(env('root').env('front').env('css').'style.css')}}" rel="stylesheet">
+    <link href="{{asset(env('ROOT').env('FRONT').env('CSS').'bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset(env('ROOT').env('FRONT').env('CSS').'style.css')}}" rel="stylesheet">
     <!-- font awesome -->
-    <link rel="stylesheet" href="{{asset(env('root').env('front').env('vendors').'fontawesome/css/all.css')}}">
+    <link rel="stylesheet" href="{{asset(env('ROOT').env('FRONT').env('VENDORS').'fontawesome/css/all.css')}}">
 
 </head>
 <body>
@@ -20,7 +20,7 @@
                 <div class="form-container">
                     <div class="form-brand-logo">
                         <div class="center-logo">
-                            <img src="{{asset(env('root').env('brand').'oyuneks-form-logo.svg')}}">
+                            <img src="{{asset(env('ROOT').env('BRAND').'oyuneks-form-logo.svg')}}">
                         </div>
                     </div>
                 @if(session('success'))

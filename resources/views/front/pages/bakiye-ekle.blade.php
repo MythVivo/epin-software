@@ -7,7 +7,6 @@
     </style>
 @endsection
 @section('body')
-    <script type="text/javascript" src="https://merch-prod.snd.payu.com/javascript/sdk"></script>
     <section class="game pt-140">
         <div class="container">
             <div class="accordion mt-100 mb-100" id="online-pay">
@@ -93,8 +92,7 @@
                             <path class="darkcolor greydark"
                                   d="M750,431V193.2c-217.6-57.5-556.4-13.5-750,24.9V431c0,22.1,17.9,40,40,40h670C732.1,471,750,453.1,750,431z"/>
                         </g>
-                        <text transform="matrix(1 0 0 1 60.106 295.0121)" id="svgnumber" class="st2 st3 st4">0123 4567
-                            8910 1112
+                        <text transform="matrix(1 0 0 1 60.106 295.0121)" id="svgnumber" class="st2 st3 st4">0123 4567 8910 1112
                         </text>
                         <text transform="matrix(1 0 0 1 54.1064 428.1723)" id="svgname" class="st2 st5 st6">Ad Soyad
                         </text>
@@ -199,24 +197,33 @@
                                             </div>
                                             <div class="form-container">
                                                 <div class="field-container">
-                                                    <label for="name">Adı Soyadı</label>
+                                                    <label for="name">Kart Üzerindeki İsim</label>
                                                     <input name="name" id="name" maxlength="20" type="text">
                                                 </div>
-                                                <div id="cardnumber" class="field-container">
+                                                <div class="field-container">
+                                                    <label for="cardnumber">Kart Numarası</label><span id="generatecard">generate random</span>
+                                                    <input name="number" id="cardnumber" type="text" inputmode="numeric">
+                                                    <svg id="ccicon" class="ccicon" width="750" height="471" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                         xmlns:xlink="http://www.w3.org/1999/xlink">
 
+                                                    </svg>
                                                 </div>
-                                                <div id="expirationdate" class="field-container">
-
+                                                <div class="field-container">
+                                                    <label for="expirationdate">Geçerlilik T. (aa/yy)</label>
+                                                    <input name="expiration" id="expirationdate" type="text" inputmode="numeric">
                                                 </div>
-                                                <div id="securitycode" class="field-container">
+                                                <div class="field-container">
+                                                    <label for="securitycode">Güvenlik Kodu</label>
+                                                    <input name="cvv" id="securitycode" type="text" pattern="[0-9]*" inputmode="numeric">
+                                                </div>
 
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <input type="hidden" name="token" value="" id="token">
-                                <button id="tokenizeButton" type="button" class="btn btn-outline-success btn-lg w-100">Ödeme Yap</button>
+                                <button type="submit" class="btn btn-outline-success btn-lg w-100">
+                                    Ödeme Yap
+                                </button>
                             </form>
                         </div>
                     </div>
@@ -292,73 +299,12 @@
 @section('js')
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js"></script>
-    <script src="{{asset(env('root').env('front').env('js').'paycard.js')}}"></script>
-    <script src="{{asset(env('root').env('front').env('js').'custom-select.js')}}"></script>
+    <script src="{{asset(env('ROOT').env('FRONT').env('JS').'paycard.js')}}"></script>
+    <script src="{{asset(env('ROOT').env('FRONT').env('JS').'custom-select.js')}}"></script>
     <script>
         $("input[name=tutar_manuel]").click(function (e) {
             $("#danger_outlined3").prop('checked', true)
         })
-
-        var optionsForms = {
-            cardIcon: true,
-            style: {
-                basic: {
-                    fontSize: '18px',
-                }
-            },
-            placeholder: {
-                number: '',
-                date: 'MM/YY',
-                cvv: ''
-            },
-            lang: 'en'
-        }
-
-        var renderError = function (element, errors) {
-            element.className = 'response-error';
-            var messages = [];
-            errors.forEach(function (error) {
-                messages.push(error.message);
-            });
-            element.innerText = messages.join(', ');
-        };
-
-        var renderSuccess = function (element, msg) {
-            element.className = 'response-success';
-            element.innerText = msg;
-        };
-
-        //initialize the SDK by providing your POS ID and create secureForms object
-        var payuSdkForms = PayU('410199');
-        var secureForms = payuSdkForms.secureForms();
-
-        //create the forms by providing type and options
-        var cardNumber = secureForms.add('number', optionsForms);
-        var cardDate = secureForms.add('date', optionsForms);
-        var cardCvv = secureForms.add('cvv', optionsForms);
-
-        //render the form in selected element
-        cardNumber.render('#cardnumber');
-        cardDate.render('#expirationdate');
-        cardCvv.render('#securitycode');
-
-        var tokenizeButton = document.getElementById('tokenizeButton');
-
-        tokenizeButton.addEventListener('click', function () {
-
-            try {
-                ////tokenize the card (communicate with PayU server)
-                payuSdkForms.tokenize('SINGLE').then(function (result) { // example for SINGLE type token
-                    if(result.status === 'SUCCESS') {
-                        $("#token").val(result.body.token);
-                        $("#payOnline").submit();
-                    }
-                });
-            } catch (e) {
-                console.log(e); // technical errors
-            }
-        });
-
     </script>
 
 @endsection

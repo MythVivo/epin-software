@@ -13,7 +13,7 @@
                 <div class="page-wrapper">
                     <figure>
                         <span class="news-in-date">1 Ay Önce</span>
-                        <img src="{{asset(env('root').env('front').env('news').$image)}}" alt="{{$u->title}}">
+                        <img src="{{asset(env('ROOT').env('FRONT').env('NEWS').$image)}}" alt="{{$u->title}}">
                         <h1 class="heading-primary"> {{$u->title}}</h1>
                     </figure>
                     <article>

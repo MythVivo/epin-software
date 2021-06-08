@@ -12,7 +12,7 @@
             <div class="col-md-6 col-lg-4">
                 <div class="game-card">
                     <figure>
-                        <img src="{{asset(env('root').env('front').env('games').$image)}}">
+                        <img src="{{asset(env('ROOT').env('FRONT').env('GAMES').$image)}}">
                     </figure>
                     <div class="game-card-description">
                         <a class="btn-inline color-blue title-button" href="{{route('oyun_baslik', $u->link)}}"> {{$u->title}} </a>
