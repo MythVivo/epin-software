@@ -29,9 +29,9 @@
             </a>
             <ul class="nav nav-pills">
                 <li class="nav-item"><i class="far fa-search"></i></li>
-                <li class="nav-item"><a href="{{route('homepage')}}" class="nav-link active">Anasayfa</a></li>
+                <li class="nav-item"><a href="{{route('homepage')}}" class="nav-link @if(getPage() == '/') active @endif">Anasayfa</a></li>
                 <li class="nav-item">
-                    <a href="{{route('oyun_baslik', 'knight-online')}}" class="nav-link">
+                    <a href="{{route('oyun_baslik', 'knight-online')}}" class="nav-link @if(getPage() == 'oyun/knight-online') active @endif">
                         Knight Online
                     </a>
                     <ul class="sub-mega-menu container">
@@ -52,12 +52,12 @@
                     </ul>
 
                 </li>
-                <li class="nav-item"><a href="#" class="nav-link">Item <span>&</span> Skins</a></li>
-                <li class="nav-item"><a href="{{route('oyunlarTum')}}" class="nav-link">Oyunlar</a></li>
+                <li class="nav-item"><a href="#" class="nav-link @if(getPage() == '/item-ve-skins') active @endif">Item <span>&</span> Skins</a></li>
+                <li class="nav-item"><a href="{{route('oyunlarTum')}}" class="nav-link @if(getPage() == 'oyunlar') active @endif">Oyunlar</a></li>
             </ul>
             <ul class="nav icon-area text-right">
                 <li class="nav-item">
-                    <a class="nav-link d-flex justify-content-center" href="#">
+                    <a class="nav-link d-flex justify-content-center" href="{{route('bakiye_ekle')}}">
                         <i class="fas fa-credit-card align-self-center"></i>
                     </a>
                 </li>
@@ -68,7 +68,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex justify-content-center" href="#">
+                    <a class="nav-link d-flex justify-content-center" href="{{route('hesabim')}}#hesap-ayarlar-tab">
                         <i class="fas fa-cog align-self-center"></i>
                     </a>
                 </li>

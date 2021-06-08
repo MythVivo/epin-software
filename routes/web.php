@@ -38,6 +38,9 @@ Route::get('/kayit', [RegisterController::class, 'register'])->name('kayit');
 Route::post('/kayit', [RegisterController::class, 'register_post'])->name('kayit_post');
 Route::get('/cikis', [LoginController::class, 'logout'])->name('logout');
 Route::get('/hesap-onayla/{email}/{key}', [RegisterController::class, 'active'])->name('active');
+Route::get('/sifremi-unuttum', [LoginController::class, 'sifremi_unuttum'])->name('sifremi_unuttum');
+Route::post('/sifremi-unuttum', [LoginController::class, 'sifremi_unuttum_post'])->name('sifremi_unuttum_post');
+
 
 /*
  * Oyunlar
@@ -52,18 +55,22 @@ Route::post('/urun-onizle', [MainController::class, 'urun_onizle_post'])->name('
 Route::post('/siparis-ver', [SiparisController::class, 'siparis_ver'])->name('siparis_ver');
 
 
-Route::get('/bakiye-ekle', [SiparisController::class, 'bakiye_ekle'])->name('bakiye_ekle');
 
-Route::post('/odeme-yap', [SiparisController::class, 'odeme_yap'])->name('odeme_yap');
 
 /*
  * Lang
  */
 Route::get('/lang/{lang}', [LangController::class, 'lang'])->name('lang');
 
+Route::get('api/odeme-al',  [SiparisController::class, 'odeme_notify']);
+
 
 Auth::routes();
 Route::get('/hesabim', [HomeController::class, 'hesabim'])->name('hesabim');
+
+Route::get('/bakiye-ekle', [SiparisController::class, 'bakiye_ekle'])->name('bakiye_ekle')->middleware('auth');
+Route::post('/odeme-yap', [SiparisController::class, 'odeme_yap'])->name('odeme_yap')->middleware('auth');
+
 
 Route::prefix('panel')->middleware('auth')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('panel');

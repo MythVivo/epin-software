@@ -75,4 +75,9 @@ class LoginController extends Controller
         Auth::logout();
         return redirect()->route('homepage');
     }
+
+    public function sifremi_unuttum()
+    {
+        return view('front.pages.sifremi-unuttum');
+    }
 }

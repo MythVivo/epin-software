@@ -819,7 +819,7 @@ footer {
 section.login-page .form-wrapper {
     display: flex;
     justify-content: center;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
 }
 
 section.login-page .form-wrapper .row {
@@ -835,6 +835,7 @@ section.login-page .form-wrapper .form-container {
     display: flex;
     justify-content: center;
     max-width: 650px;
+    margin-bottom: 100px;
 }
 
 .form-brand-logo .center-logo {
@@ -846,7 +847,15 @@ section.login-page .form-wrapper .form-container {
     border-bottom-right-radius: 120px;
 }
 
-.form-brand-logo .center-logo img {}
+.form-brand-logo .center-logo img {
+    -webkit-animation:spin 10s cubic-bezier(0.39, -0.39, 0.62, 1.4) infinite;
+    -moz-animation:spin 10s cubic-bezier(0.39, -0.39, 0.62, 1.4) infinite;
+    animation:spin 10s cubic-bezier(0.39, -0.39, 0.62, 1.4) infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
 
 section.login-page .login-register-buttons {
     margin: 0 -20px;
@@ -875,10 +884,11 @@ section.login-page .form-wrapper .form-container label {
 section.login-page .form-wrapper .form-container label a {
     float: right;
     font-family: 'BrandonGrotesque';
-    color: #D9D9D9;
+    color: #343891;
     font-size: 16px;
     line-height: 20px;
     margin-top: 8px;
+    text-decoration: unset;
 }
 
 section.login-page .form-wrapper .form-container label input {
@@ -889,7 +899,11 @@ section.login-page .form-wrapper .form-container label input {
     font-size: 25px;
     line-height: 36px;
     padding: 10px 20px;
-    color: #D9D9D9;
+    color: #343891;
+}
+
+section.login-page .form-wrapper .form-container label input:focus-visible {
+    outline: none;
 }
 
 section.login-page .form-wrapper .form-container label input[type=checkbox] {
@@ -1986,4 +2000,34 @@ input[type=number] {
     border-radius: 0px 0px 20px 20px;
     padding: 10px 30px;
     background-color: white;
+}
+
+#cardnumber {
+    margin-top: 3px;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #dcdcdc;
+    height: 45px;
+}
+
+#expirationdate {
+    margin-top: 3px;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #dcdcdc;
+    height: 45px;
+}
+
+#securitycode {
+    margin-top: 3px;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #dcdcdc;
+    height: 45px;
 }

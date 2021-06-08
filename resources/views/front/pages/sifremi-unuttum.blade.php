@@ -81,7 +81,7 @@
                             </div>
                             <div class="col-12">
                                 <label><input type="password" name="password" placeholder="Şifre" required>
-                                    <a href="{{route('sifremi_unuttum')}}">Şifremi Unuttum</a></label>
+                                    <a>Şifremi Unuttum</a></label>
                             </div>
 
                             <label class="d-flex align-items-center">
